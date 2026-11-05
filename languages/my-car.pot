@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-05T20:26:24+00:00\n"
+"POT-Creation-Date: 2026-11-05T20:43:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: my-car\n"
@@ -39,123 +39,84 @@ msgstr ""
 msgid "http://iworks.pl/"
 msgstr ""
 
-#: assets/templates/opinion/header.php:4
-#: assets/templates/project/header.php:4
-msgid "What our customers are saying"
-msgstr ""
-
-#: assets/templates/project/part-data.php:8
-msgid "Project data"
-msgstr ""
-
-#: assets/templates/project/part-partners.php:17
-msgid "Lider"
-msgid_plural "Liders"
-msgstr[0] ""
-msgstr[1] ""
-
-#: assets/templates/project/part-partners.php:20
-msgid "Scientific Partner"
-msgid_plural "Scientific Partners"
-msgstr[0] ""
-msgstr[1] ""
-
-#: assets/templates/project/part-partners.php:23
-msgid "Business Partner"
-msgid_plural "Business Partners"
-msgstr[0] ""
-msgstr[1] ""
-
-#: assets/templates/project/part-partners.php:26
-msgid "Partner"
-msgid_plural "Partners"
-msgstr[0] ""
-msgstr[1] ""
-
-#: assets/templates/project/part-partners.php:29
-msgid "Subcontractor"
-msgid_plural "Subcontractors"
-msgstr[0] ""
-msgstr[1] ""
-
-#: etc/options.php:58
+#: etc/options.php:66
 #: includes/iworks/my-car/class-iworks-my-car-wp-admin.php:240
 msgid "Settings"
 msgstr ""
 
-#: etc/options.php:124
+#: etc/options.php:132
 msgid "General"
 msgstr ""
 
-#: etc/options.php:130
+#: etc/options.php:138
 msgid "Distance Unit"
 msgstr ""
 
-#: etc/options.php:131
+#: etc/options.php:139
 msgid "Unit used for distances and odometer readings."
 msgstr ""
 
-#: etc/options.php:133
+#: etc/options.php:141
 msgid "Kilometers (km)"
 msgstr ""
 
-#: etc/options.php:134
+#: etc/options.php:142
 msgid "Miles (mi)"
 msgstr ""
 
-#: etc/options.php:143
+#: etc/options.php:151
 msgid "Currency"
 msgstr ""
 
-#: etc/options.php:144
+#: etc/options.php:152
 msgid "Currency used for costs and expenses."
 msgstr ""
 
-#: etc/options.php:146
+#: etc/options.php:154
 msgid "Polish Złoty (PLN)"
 msgstr ""
 
-#: etc/options.php:147
+#: etc/options.php:155
 msgid "Euro (EUR)"
 msgstr ""
 
-#: etc/options.php:148
+#: etc/options.php:156
 msgid "US Dollar (USD)"
 msgstr ""
 
-#: etc/options.php:149
+#: etc/options.php:157
 msgid "British Pound (GBP)"
 msgstr ""
 
-#: etc/options.php:157
+#: etc/options.php:165
 msgid "Cars"
 msgstr ""
 
-#: etc/options.php:163
+#: etc/options.php:171
 msgid "Cars Archive"
 msgstr ""
 
-#: etc/options.php:164
+#: etc/options.php:172
 msgid "Enable the public cars archive page."
 msgstr ""
 
-#: etc/options.php:173
+#: etc/options.php:181
 msgid "Show VIN"
 msgstr ""
 
-#: etc/options.php:174
+#: etc/options.php:182
 msgid "Display the VIN number on public car pages."
 msgstr ""
 
-#: etc/options.php:182
+#: etc/options.php:190
 msgid "Data"
 msgstr ""
 
-#: etc/options.php:188
+#: etc/options.php:196
 msgid "Delete Data on Uninstall"
 msgstr ""
 
-#: etc/options.php:189
+#: etc/options.php:197
 msgid "Remove all plugin data (posts, options, meta) when the plugin is uninstalled."
 msgstr ""
 
@@ -776,8 +737,8 @@ msgid "Planned"
 msgstr ""
 
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:283
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:217
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:407
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:205
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:395
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
@@ -785,18 +746,18 @@ msgstr ""
 msgid "Service"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:352
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:340
 msgid "Select Image"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:356
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:344
 msgid "Delete image"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:559
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:547
 msgid "Order"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:603
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:591
 msgid "Selected Taxonomy dosn't exists."
 msgstr ""

@@ -152,6 +152,7 @@ export function copyRules(flavor) {
     { glob: "**/*.map", include: false },
     { glob: "**/README.md", include: false },
     { glob: "README.md", include: false },
+    { glob: "AGENTS.md", include: false },
     { glob: "contributing.md", include: false },
     { glob: "**/bitbucket-pipelines.yml", include: false },
     { glob: "**/css/less/**", include: false },

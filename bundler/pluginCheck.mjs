@@ -66,6 +66,13 @@ export async function pluginCheck(slug, version) {
       "wp plugin check",
       false,
     );
+    if (result.code !== 0 && !result.stdout.trim()) {
+      const err = new Error(
+        `plugin-check — wp plugin check failed with no output (exit ${result.code}):\n${result.stderr.split("\n").filter(Boolean).slice(0, 5).join("\n")}`,
+      );
+      err.friendly = true;
+      throw err;
+    }
     const lines = result.stdout.split("\n");
     const errorLines = [];
     for (const line of lines) {

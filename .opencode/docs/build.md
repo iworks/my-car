@@ -40,6 +40,11 @@ script renames the plugin and the bundler follows automatically.
 | `bun run compile`      | One-shot asset compile with source maps (old `grunt` default task)                            |
 | `bun run build`        | Both flavors back-to-back: wporg + github                                                     |
 | `bun run build:wporg`  | Production → `release/wporg/{name}.zip` + Plugin Check (PCP)                                 |
+
+Excluded from the release ZIPs (copy rules in `bundler/config.mjs`):
+`AGENTS.md`, `README.md`, `phpcs.xml.dist`, `.env*`, `.editorconfig`,
+`.git*` files, `bundler/`, `.opencode/`, `tests/`, `release/`, `wp-cli.phar`,
+`node_modules/`, source maps.
 | `bun run build:github` | Production + `.mo` → `release/github/{name}.zip`                                              |
 | `bun run make-pot`     | Translations only (`.pot` + `.po` update)                                                     |
 | `bun run update-libs`  | `git pull` on the vendored iWorks libraries (`includes/iworks/options`, `includes/iworks/rate`) |

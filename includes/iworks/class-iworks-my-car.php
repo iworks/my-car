@@ -90,10 +90,6 @@ class iworks_my_car extends iworks_my_car_base {
 				new iworks_my_car_wp_admin();
 			}
 		}
-		/**
-		 * is active?
-		 */
-		add_filter( 'my-car/is_active', '__return_true' );
 	}
 
 	/**

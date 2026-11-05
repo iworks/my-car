@@ -39,7 +39,6 @@ and the version constant both use the `PLUGIN_VERSION` placeholder.
 │   ├── sass/admin/              # SCSS sources (_mixin, media, wp-list-table)
 │   ├── scripts/src/admin/       # Admin JS sources (frontend sources dir may not exist yet)
 │   ├── styles/                  # Compiled CSS (gitignored)
-│   ├── templates/               # Post type templates (featured, hero, opinion, project, testimonial)
 │   └── bin/wp-plugin-create.sh  # Scaffolding script for new plugins
 ├── languages/                   # my-car.pot (+ .po/.mo built)
 ├── tests/php/                   # PHPUnit (phpunit.xml, bootstrap.php, test-sample.php)
@@ -82,11 +81,9 @@ and the version constant both use the `PLUGIN_VERSION` placeholder.
 
 - Post types are disabled by default; a theme/plugin must enable them via filters:
   `add_filter( 'my-car/load/post-type/{name}', '__return_true' )`.
-- The bootstrap file stubs these filters with `__return_false` for:
-  `faq`, `hero`, `opinion`, `page`, `person`, `post`, `project`, `promo`, `publication`.
-- Post type class names map to registered post types (`iworks_faq`, `iworks_person`,
-  …; `page` and `post` reuse the native types). Shared taxonomies: `iworks_faq_group`,
-  `iworks_person_role`. Templates live in `assets/templates/`.
+- The bootstrap file stubs these filters with `__return_true` for exactly the
+  existing types: `car` and `service-record`. The boilerplate types (faq,
+  hero, opinion, …) were removed together with `assets/templates/`.
 
 ## Options layer (etc/options.php + iworks_options)
 

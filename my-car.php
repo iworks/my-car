@@ -32,9 +32,13 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly
  * Define static options and constants for the plugin
  */
 // Define plugin version constant
-define( 'IWORKS_MY_CAR_VERSION', 'PLUGIN_VERSION' );
+if ( ! defined( 'IWORKS_MY_CAR_VERSION' ) ) {
+	define( 'IWORKS_MY_CAR_VERSION', 'PLUGIN_VERSION' );
+}
 // Define prefix for all plugin options and functions
-define( 'IWORKS_MY_CAR_PREFIX', 'iworks_my-car_' );
+if ( ! defined( 'IWORKS_MY_CAR_PREFIX' ) ) {
+	define( 'IWORKS_MY_CAR_PREFIX', 'iworks_my-car_' );
+}
 // Get the base directory path
 $my_car_base = __DIR__;
 // Set vendor directory path (where core classes are located)
@@ -67,30 +71,12 @@ if ( ! class_exists( 'iworks_options' ) ) {
 /**
  * Post Type Filters
  * These filters control which custom post types are loaded by the plugin
- * Each filter returns false by default - change to true to enable the post type
+ * Each filter returns true by default - change to false to disable the post type
  */
 // Car post type
 add_filter( 'my-car/load/post-type/car', '__return_true' );
 // Service record post type
 add_filter( 'my-car/load/post-type/service-record', '__return_true' );
-// FAQ post type
-add_filter( 'my-car/load/post-type/faq', '__return_false' );
-// Hero post type
-add_filter( 'my-car/load/post-type/hero', '__return_false' );
-// Opinion post type
-add_filter( 'my-car/load/post-type/opinion', '__return_false' );
-// Custom page post type
-add_filter( 'my-car/load/post-type/page', '__return_false' );
-// Person post type
-add_filter( 'my-car/load/post-type/person', '__return_false' );
-// Custom post post type
-add_filter( 'my-car/load/post-type/post', '__return_false' );
-// Project post type
-add_filter( 'my-car/load/post-type/project', '__return_false' );
-// Promo post type
-add_filter( 'my-car/load/post-type/promo', '__return_false' );
-// Publication post type
-add_filter( 'my-car/load/post-type/publication', '__return_false' );
 
 /**
  * Initialize and get plugin options
@@ -98,33 +84,40 @@ add_filter( 'my-car/load/post-type/publication', '__return_false' );
  *
  * @return iworks_options The plugin options object
  */
-function iworks_my_car_get_options() {
-	// Use global variable to store options object
-	global $iworks_my_car_options;
+if ( ! function_exists( 'iworks_my_car_get_options' ) ) {
+	/**
+	 * Initialize and get plugin options.
+	 *
+	 * @return iworks_options The plugin options object
+	 */
+	function iworks_my_car_get_options() {
+		// Use global variable to store options object
+		global $iworks_my_car_options;
 
-	// Return existing options object if it exists
-	if ( is_object( $iworks_my_car_options ) ) {
+		// Return existing options object if it exists
+		if ( is_object( $iworks_my_car_options ) ) {
+			return $iworks_my_car_options;
+		}
+
+		// Create new options object if it doesn't exist
+		$iworks_my_car_options = new iworks_options();
+
+		// Set the function name for options
+		$iworks_my_car_options->set_option_function_name( 'iworks_my_car_options' );
+		// Set the option prefix for all plugin options
+		$iworks_my_car_options->set_option_prefix( IWORKS_MY_CAR_PREFIX );
+
+		// Set the plugin file name if the method exists
+		if ( method_exists( $iworks_my_car_options, 'set_plugin' ) ) {
+			$iworks_my_car_options->set_plugin( basename( __FILE__ ) );
+		}
+
+		// Initialize the options
+		$iworks_my_car_options->options_init();
+
+		// Return the options object
 		return $iworks_my_car_options;
 	}
-
-	// Create new options object if it doesn't exist
-	$iworks_my_car_options = new iworks_options();
-
-	// Set the function name for options
-	$iworks_my_car_options->set_option_function_name( 'iworks_my_car_options' );
-	// Set the option prefix for all plugin options
-	$iworks_my_car_options->set_option_prefix( IWORKS_MY_CAR_PREFIX );
-
-	// Set the plugin file name if the method exists
-	if ( method_exists( $iworks_my_car_options, 'set_plugin' ) ) {
-		$iworks_my_car_options->set_plugin( basename( __FILE__ ) );
-	}
-
-	// Initialize the options
-	$iworks_my_car_options->options_init();
-
-	// Return the options object
-	return $iworks_my_car_options;
 }
 
 // Initialize the main plugin class

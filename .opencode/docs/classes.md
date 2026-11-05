@@ -44,7 +44,9 @@ Methods:
 - `print_table_body( $post_id, $fields )` — renders admin meta-field table rows
   (`number`, `date` types; extra attrs: `placeholder`, `style`, `class`, `id`).
 - `get_module_file( $filename, $dir = '' )` — resolves
-  `assets/templates{$dir}/{$filename}.php` (template include helper).
+  `assets/templates{$dir}/{$filename}.php` (template include helper; the
+  templates directory was removed with the boilerplate — it returns `false`
+  for car / service-record, so list rendering skips the includes).
 - `html_title( $text )` — `<h1 class="wp-heading-inline">` for admin pages.
 - `get_stub_data()` — stub metadata (published date, version, GitHub URL).
 - `simple_history_logger_helper( $message, $data, $level )` — logs via the
@@ -125,12 +127,11 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
     - `$meta_boxes` (per-type metabox definitions), `$option_name_media`,
       `$load_plugin_admin_assets` flag.
 - Concrete classes: `class-iworks-my-car-posttype-{name}.php`
-  — one file per type (car, faq, featured, hero, opinion, page, person, post,
-  project, publication, testimonials). Class name:
+  — one file per type (car, service-record). Class name:
   `iworks_my_car_posttype_{name}`.
-- Templates rendered by the types live in `assets/templates/{featured,hero,opinion,project,testimonial}/`.
 - **Enabling**: `add_filter( 'my-car/load/post-type/{name}', '__return_true' )`
-  — `{name}` is derived from the filename (see pitfalls in `project.md`).
+  — `{name}` is derived from the filename (see pitfalls in `project.md`); the
+  bootstrap stubs exactly the two filters above.
 
 - **Car post type** (`posttype-car.php`) — registers `iworks_car` with taxonomies
   `iworks_car_brand` (hierarchical "Brands & Models" — models are child terms

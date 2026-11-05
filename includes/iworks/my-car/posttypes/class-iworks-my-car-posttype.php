@@ -30,17 +30,7 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 	 */
 	protected array $post_type_name = array(
 		'car'            => 'iworks_car',
-		'faq'            => 'iworks_faq',
-		'featured'       => 'iworks_featured',
-		'hero'           => 'iworks_hero',
-		'opinion'        => 'iworks_opinion',
-		'page'           => 'page', // for WordPress pages
-		'person'         => 'iworks_person',
-		'post'           => 'post', // for WordPress posts
-		'project'        => 'iworks_project',
-		'publication'    => 'iworks_publication',
 		'service_record' => 'iworks_car_service',
-		'testimonial'    => 'iworks_testimonial',
 	);
 
 	/**
@@ -50,12 +40,10 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 	 * @var array $taxonomy_name Array of taxonomy identifiers
 	 */
 	protected array $taxonomy_name = array(
-		'car_body_type'      => 'iworks_car_body_type',
-		'car_brand'          => 'iworks_car_brand',
-		'car_engine_type'    => 'iworks_car_engine_type',
-		'faq_group'          => 'iworks_faq_group',
-		'person_role'        => 'iworks_person_role',
-		'service_type'       => 'iworks_car_service_type',
+		'car_body_type'   => 'iworks_car_body_type',
+		'car_brand'       => 'iworks_car_brand',
+		'car_engine_type' => 'iworks_car_engine_type',
+		'service_type'    => 'iworks_car_service_type',
 	);
 
 
