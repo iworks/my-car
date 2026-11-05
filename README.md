@@ -1,8 +1,30 @@
 # My Car
 
-A boilerplate for WordPress plugins (iWorks style): main file + PHP classes
-(`/includes/iworks`) + options config (`/etc/options.php`) + assets built with
-a bun bundler. New plugins are scaffolded from this stub — see below.
+**My Car** is a car manager for WordPress — build a garage of your vehicles,
+keep a digital passport for each one, track the mileage and record every
+service visit. Everything is managed from the admin in one place and
+presented on the frontend with clean, configurable data tables.
+
+## Features
+
+- **Cars post type** with a **Vehicle Digital Passport**: VIN, license plate,
+  production year, engine capacity, engine power and, for electrified cars,
+  battery capacity and electric range.
+- **Taxonomies**: brand & model (hierarchical), body type, engine type.
+- **Engine-aware passport** — which passport fields apply is configured per
+  engine type (electric cars don't show engine capacity, petrol cars don't
+  show battery range).
+- **Mileage log** per car, managed from a modal window directly in the cars
+  list.
+- **Service Records** post type: inspections, part replacements and other
+  service events with date, mileage, workshop, cost and status (done /
+  planned), tagged with predefined **service types**.
+- **Frontend data tables** — passport, mileage log and service history on
+  every car page, with per-field visibility (owner only / everyone / hidden)
+  for VIN, license plate, mileage log and service records.
+- **Predefined data import** — one-click term sets: popular brands with
+  models, body types, engine types and service types; language-aware presets
+  (e.g. Polish) when the site runs in a supported language.
 
 Requirements: [Bun](https://bun.sh) >= 1.3, PHP >= 8.1.
 
@@ -12,12 +34,6 @@ Requirements: [Bun](https://bun.sh) >= 1.3, PHP >= 8.1.
 2. run `bun install` (the `postinstall` script downloads `wp-cli.phar`)
 3. run `bun run dev` to watch assets, or `bun run build` for a production build
    (both ZIPs: `release/wporg/`, `release/github/`)
-
-## How to create a new plugin from this stub?
-
-1. run `assets/bin/wp-plugin-create.sh 'Plugin Name' [slug]` — clones the repo
-   and renames everything (slug, class names, prefixes, placeholders)
-2. inside the new plugin run `bun install && bun run build`
 
 ## How to prepare test environment?
 
