@@ -161,6 +161,8 @@ export function copyRules(flavor) {
     { glob: "**/img/src/**", include: false },
     { glob: "**/js/src/**", include: false },
     { glob: "includes/pro/**", include: false },
+    // TEMP: rate library excluded from the release for now — it will return.
+    { glob: "includes/iworks/rate/**", include: false },
   ];
   const flavorRules =
     flavor === "github"

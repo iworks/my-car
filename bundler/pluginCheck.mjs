@@ -8,7 +8,8 @@
  */
 
 import { basename, dirname, join, resolve } from "node:path";
-import { cpSync, existsSync, rmSync } from "node:fs";
+import { cpSync, existsSync, rmSync, symlinkSync } from "node:fs";
+import { relative } from "node:path";
 import { log } from "./consoleHelpers.mjs";
 import { spawnAsync } from "./spawnAsync.mjs";
 
@@ -95,6 +96,7 @@ export async function pluginCheck(slug, version) {
   } finally {
     rmSync(target, { recursive: true, force: true });
   }
+  symlinkRelease(pluginsDir, slug, version);
   if (errors) {
     const err = new Error(
       `plugin-check — ${errors} Plugin Check error(s) (PLUGIN_CHECK_SKIP=1 to skip)`,
@@ -104,4 +106,39 @@ export async function pluginCheck(slug, version) {
   }
   log("plugin-check — passed", "s");
   return { errors, warnings };
+}
+
+/**
+ * Symlink the just-built wporg release into the WordPress plugins
+ * directory, so the local site loads the actual built version.
+ *
+ * Linux/macOS only (symlinks); skipped with a warning elsewhere or when
+ * PLUGIN_SYMLINK_SKIP=1. Never fails the build — symlink problems are
+ * reported as warnings.
+ *
+ * @param {string} pluginsDir Local WordPress plugins directory.
+ * @param {string} slug Plugin slug.
+ * @param {string} version Plugin version (staging subdirectory).
+ * @return {void}
+ */
+function symlinkRelease(pluginsDir, slug, version) {
+  if (Bun.env.PLUGIN_SYMLINK_SKIP === "1") {
+    return;
+  }
+  if (process.platform !== "linux" && process.platform !== "darwin") {
+    log(
+      `plugin-check — symlink skipped (unsupported platform: ${process.platform})`,
+      "w",
+    );
+    return;
+  }
+  const stagedDir = join("release", "wporg", version, slug);
+  const link = join(pluginsDir, slug);
+  try {
+    rmSync(link, { recursive: true, force: true });
+    symlinkSync(relative(pluginsDir, join(root, stagedDir)), link);
+    log(`plugin-check — ${link} → ${stagedDir}`, "s");
+  } catch (error) {
+    log(`plugin-check — symlink failed: ${error.message}`, "w");
+  }
 }

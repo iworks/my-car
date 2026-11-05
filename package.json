@@ -1,9 +1,9 @@
 {
     "name": "my-car",
     "title": "My Car",
-    "tagline": "My Car",
+    "tagline": "Your car's digital passport — garage, mileage log and service records, all in WordPress.",
     "uri": "http://iworks.pl/iw_plugin/my-car/",
-    "description": "My Car",
+    "description": "Manage your vehicles in WordPress: a digital passport for every car (VIN, engine, battery), a mileage log and a full service history with per-field privacy control.",
     "version": "0.0.1",
     "repository": {
         "type": "git",

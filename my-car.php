@@ -44,6 +44,13 @@ $my_car_base = __DIR__;
 // Set vendor directory path (where core classes are located)
 $my_car_vendor = $my_car_base . '/includes';
 
+// Bootstrap only once — the built release may be symlinked next to the dev
+// copy in the plugins directory; the first-loaded plugin file wins.
+if ( defined( 'IWORKS_MY_CAR_LOADED' ) ) {
+	return;
+}
+define( 'IWORKS_MY_CAR_LOADED', true );
+
 /**
  * Load the main plugin class if it doesn't exist
  * This is the core class that handles all plugin functionality

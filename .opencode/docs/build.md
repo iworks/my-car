@@ -85,10 +85,19 @@ error line is printed with line/column/code). Skips gracefully (with a
 warning) when `wp-cli.phar` or the Plugin Check plugin is missing.
 `PLUGIN_CHECK_SKIP=1` skips the step for one build. Requires the
 [Plugin Check](https://wordpress.org/plugins/plugin-check/) plugin installed
-locally. Current state: 12 errors, all in vendored iWorks libraries (unescaped
-`wpautop()` in the rate templates, unescaped `$args` in the options class,
-`mt_rand()` in the rate class) — reported upstream; fix there rather than
-skipping the check.
+locally. After the check (also on a red build), the staged release is
+**symlinked** into the WordPress plugins dir (`wp-content/plugins/my-car` →
+`dev-my-car/release/wporg/{version}/my-car`, relative link) so the local site
+runs the actual built version. Symlinking is Linux/macOS-only (warning
+elsewhere) and never fails the build; `PLUGIN_SYMLINK_SKIP=1` skips it. The
+plugin bootstrap (`my-car.php`) returns early on `IWORKS_MY_CAR_LOADED`, so
+the dev copy and the symlinked release can coexist/both be active — the
+first-loaded one wins. Current state: 1 error, in the vendored iWorks
+options library (unescaped `$args` in `includes/iworks/options/options.php:1555`)
+— reported upstream; fix there rather than skipping the check. The vendored
+`includes/iworks/rate/` library is **temporarily excluded** from both release
+ZIPs (copy rule in `bundler/config.mjs`, marked TEMP) — it removed 11 PCP
+errors and will be re-included once fixed upstream.
 
 Banners (grunt parity): concat = `/*! {title} - {version}\n * {website}\n *
 Copyright (c) {year}\n * Licensed {license} */`; minified JS uses the same with
