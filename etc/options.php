@@ -125,7 +125,7 @@ if ( ! function_exists( 'iworks_my_car_options' ) ) {
 			 * Array of options fields
 			 */
 			'options'    => apply_filters(
-				'my-car/etc/config/options',
+				'iworks/my-car/etc/config/options',
 				array(
 					array(
 						'type'  => 'heading',
@@ -206,12 +206,12 @@ if ( ! function_exists( 'iworks_my_car_options' ) ) {
 			/**
 			 * Array of metaboxes
 			 */
-			'metaboxes'  => apply_filters( 'my-car/etc/config/metaboxes', array() ),
+			'metaboxes'  => apply_filters( 'iworks/my-car/etc/config/metaboxes', array() ),
 
 			/**
 			 * Array of subpages
 			 */
-			'pages'      => apply_filters( 'my-car/etc/config/pages', array() ),
+			'pages'      => apply_filters( 'iworks/my-car/etc/config/pages', array() ),
 		);
 
 		/**

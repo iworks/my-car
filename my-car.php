@@ -81,9 +81,9 @@ if ( ! class_exists( 'iworks_options' ) ) {
  * Each filter returns true by default - change to false to disable the post type
  */
 // Car post type
-add_filter( 'my-car/load/post-type/car', '__return_true' );
+add_filter( 'iworks/my-car/load/post-type/car', '__return_true' );
 // Service record post type
-add_filter( 'my-car/load/post-type/service-record', '__return_true' );
+add_filter( 'iworks/my-car/load/post-type/service-record', '__return_true' );
 
 /**
  * Initialize and get plugin options

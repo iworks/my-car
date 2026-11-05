@@ -59,7 +59,7 @@ class iworks_my_car_wp_admin extends iworks_my_car_base {
 		/**
 		 * iWorks Options Hooks
 		 */
-		add_filter( 'my-car/etc/config/metaboxes', array( $this, 'filter_iworks_options_add_meta_boxes' ) );
+		add_filter( 'iworks/my-car/etc/config/metaboxes', array( $this, 'filter_iworks_options_add_meta_boxes' ) );
 	}
 
 	/**

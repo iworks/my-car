@@ -73,7 +73,6 @@ instantiated once in `my-car.php`.
   ```
 
   Loads: `posttypes`, `github`, `cron`, `db`; `wp-admin` only inside `is_admin()`.
-  Finally adds the filter `my-car/is_active` → `__return_true`.
 - `action_init_settings()` — on `init`: non-admin only, enqueues
   `assets/styles/my-car{dev}.css` (version via `get_version()`).
 - `register_activation_hook()` — `db_install()` (empty stub) + `check_option_object()`
@@ -90,7 +89,7 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
   (standalone class, not a base child). Globs `posttypes/class*.php`, extracts
   the type from `class-iworks-my-car-posttype-([a-z]+).php`,
   and instantiates the class only when the filter
-  `my-car/load/post-type/{name}` is `true`. Instances are kept
+  iworks/my-car/load/post-type/{name}` is `true`. Instances are kept
   in `$posttype_objects`.
 - **`class-iworks-my-car-wp-admin.php`** — admin layer
   (`manage_options`, filter `iworks_my_car_capability`):
@@ -129,7 +128,7 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
 - Concrete classes: `class-iworks-my-car-posttype-{name}.php`
   — one file per type (car, service-record). Class name:
   `iworks_my_car_posttype_{name}`.
-- **Enabling**: `add_filter( 'my-car/load/post-type/{name}', '__return_true' )`
+- **Enabling**: `add_filter( 'iworks/my-car/load/post-type/{name}', '__return_true' )`
   — `{name}` is derived from the filename (see pitfalls in `project.md`); the
   bootstrap stubs exactly the two filters above.
 
@@ -156,11 +155,11 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
   `render_engine_type_*_fields()` / `save_engine_type_fields()`); terms
   without a saved config fall back to defaults per slug
   (`get_engine_type_fields_defaults()`, filter
-  `my-car/engine-type-default-fields`). The field set is also filterable via
-  `my-car/passport-fields`. On the frontend, single car pages get a
+  iworks/my-car/engine-type-default-fields`). The field set is also filterable via
+  iworks/my-car/passport-fields`. On the frontend, single car pages get a
   "Vehicle Digital Passport" data table (passport fields + taxonomy links)
   and a "Mileage Log" table appended to the content via
-  `filter_the_content()` (filter `my-car/frontend-table`); styles live in
+  `filter_the_content()` (filter `iworks/my-car/frontend-table`); styles live in
   `assets/styles/frontend/car.css` and are compiled into
   `assets/styles/my-car-frontend.css`. Frontend visibility of VIN, the
   license plate and the mileage log is configured per car in the side
@@ -216,7 +215,7 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
   translations live in `etc/data/pl_pl/` (same schema and slugs; brands
   untranslated as proper nouns). `insert_term()` skips existing slugs, so
   re-importing never duplicates or renames already-imported terms.
-- Enabled with `add_filter( 'my-car/load/post-type/service-record', '__return_true' )`
+- Enabled with `add_filter( 'iworks/my-car/load/post-type/service-record', '__return_true' )`
   in `my-car.php`. The posttypes loader accepts hyphenated filenames and
   maps them to underscored class names.
 
@@ -243,4 +242,4 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
   the constructor, and add an enable filter in the consuming theme/plugin.
 - **Options field**: add the field array in `etc/options.php`
   (`name`, `type`, `th`, `sanitize_callback`, `since`) or extend via the
-  `my-car/etc/config/options` filter.
+  iworks/my-car/etc/config/options` filter.

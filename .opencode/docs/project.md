@@ -62,11 +62,9 @@ and the version constant both use the `PLUGIN_VERSION` placeholder.
    - loads feature classes from `includes/iworks/my-car/` with the
      `is_file()` + `include_once` + `new` pattern: `posttypes`, `github`, `cron`, `db`;
      `wp-admin` only when `is_admin()`;
-   - adds the filter `my-car/is_active` (`__return_true`).
-3. `iworks_my_car_posttypes` globs `posttypes/class*.php`, extracts
-   the type name from the filename and loads each post type class **only when the
-   filter `my-car/load/post-type/{name}` returns `true`**
-   (name comes from the *filename*, see Known pitfalls).
+3. `iworks_my_car_posttypes` loads the two post type classes (`car`,
+   `service-record`) **only when the filter
+   `iworks/my-car/load/post-type/{name}` returns `true`**.
 
 ## Constants
 
@@ -80,7 +78,7 @@ and the version constant both use the `PLUGIN_VERSION` placeholder.
 ## Post types
 
 - Post types are disabled by default; a theme/plugin must enable them via filters:
-  `add_filter( 'my-car/load/post-type/{name}', '__return_true' )`.
+  `add_filter( 'iworks/my-car/load/post-type/{name}', '__return_true' )`.
 - The bootstrap file stubs these filters with `__return_true` for exactly the
   existing types: `car` and `service-record`. The boilerplate types (faq,
   hero, opinion, …) were removed together with `assets/templates/`.
@@ -92,7 +90,7 @@ and the version constant both use the `PLUGIN_VERSION` placeholder.
   `options`, `submenu`, `management`, `theme`, `posts`, `pages`, `users`,
   `plugins`, `comments`, `dashboard`, `settings`, `media`, `custom`), `parent`
   (required for `submenu`), `use_tabs`, `version`.
-- Field arrays: `options` (filter `my-car/etc/config/options`),
+- Field arrays: `options` (filter `iworks/my-car/etc/config/options`),
   `metaboxes` (filter `.../metaboxes`), `pages` subpages (filter `.../pages`).
 - Field shape: `name`, `type` (e.g. `heading`, `text`, `textarea`), `th` (label),
   `description`, `classes`, `sanitize_callback`, `since`.
@@ -174,7 +172,7 @@ WordPress.org ZIP** (wporg releases must not self-update from GitHub).
   `if ( class_exists( ... ) ) { return; }` guard.
 - File naming: kebab-case, `class-iworks-my-car-{name}.php`;
   class names: `iworks_my_car_{name}` (snake_case, lowercase).
-- Hooks and options: `my-car/...` or `iworks_my_car_...`.
+- Hooks: `iworks/my-car/...`, options: `iworks_my_car_...` or `iworks_my_car_...`.
 - Never read the vendored frameworks' internals from feature classes — use the
   base-class helpers (`check_option_object()`, `get_meta_name()`, `get_post_meta()`).
 - Scratch files (test harnesses, debug scripts) live in `.opencode/tmp/` — never

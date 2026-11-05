@@ -44,66 +44,19 @@ class iworks_my_car_posttypes {
 	/**
 	 * Constructor for the post types class
 	 *
-	 * Automatically loads and initializes all available post type classes
-	 * based on the filter settings.
+	 * Loads and initializes the post type classes, based on
+	 * the filter settings.
 	 *
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		/**
-		 * Load post types from the posttypes directory
-		 */
-		$posttypes_classes_dir = __DIR__ . '/posttypes/';
-
-		/**
-		 * Iterate through all PHP files in the posttypes directory
-		 */
-		foreach ( glob( $posttypes_classes_dir . 'class*.php' ) as $filename_with_path ) {
-			/**
-			 * Get the base filename
-			 */
-			$filename = basename( $filename_with_path );
-
-			/**
-			 * Validate the filename format
-			 * Only process files that match the expected pattern
-			 */
-			if ( ! preg_match( '/^class-iworks-my-car-posttype-([a-z-]+).php$/', $filename, $matches ) ) {
-				continue;
-			}
-
-			/**
-			 * Extract the post type name from the filename
-			 */
-			$posttype_name = $matches[1];
-
-			/**
-			 * Create the filter name for this post type
-			 */
-			$filter = sprintf(
-				'my-car/load/post-type/%s',
-				$posttype_name
-			);
-			/**
-			 * Check if this post type should be loaded
-			 * Only load if the filter returns true
-			 */
-			if ( apply_filters( $filter, false ) ) {
-				/**
-				 * Include the post type class file
-				 */
-				include_once $posttypes_classes_dir . $filename;
-
-				/**
-				 * Generate the class name (underscores for hyphens)
-				 */
-				$class_name = sprintf( 'iworks_my_car_posttype_%s', str_replace( '-', '_', $posttype_name ) );
-
-				/**
-				 * Initialize the post type class
-				 */
-				$this->posttype_objects[ $posttype_name ] = new $class_name();
-			}
+		if ( apply_filters( 'iworks/my-car/load/post-type/car', false ) ) {
+			include_once __DIR__ . '/posttypes/class-iworks-my-car-posttype-car.php';
+			$this->posttype_objects['car'] = new iworks_my_car_posttype_car();
+		}
+		if ( apply_filters( 'iworks/my-car/load/post-type/service-record', false ) ) {
+			include_once __DIR__ . '/posttypes/class-iworks-my-car-posttype-service-record.php';
+			$this->posttype_objects['service-record'] = new iworks_my_car_posttype_service_record();
 		}
 	}
 }

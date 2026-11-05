@@ -104,7 +104,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 		/**
 		 * Settings page metaboxes and import handler
 		 */
-		add_filter( 'my-car/etc/config/options', array( $this, 'filter_add_import_options' ) );
+		add_filter( 'iworks/my-car/etc/config/options', array( $this, 'filter_add_import_options' ) );
 		add_action( 'admin_post_my-car-import-predefined', array( $this, 'handle_import_predefined' ) );
 		add_action( 'admin_notices', array( $this, 'action_admin_notices' ) );
 		/**
@@ -734,7 +734,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 		 *
 		 * @param array $fields Fields: name => label.
 		 */
-		$fields        = apply_filters( 'my-car/passport-fields', $fields );
+		$fields        = apply_filters( 'iworks/my-car/passport-fields', $fields );
 		$engine_fields = $this->get_engine_type_fields_for_car( $car_id );
 		$rows          = array();
 		foreach ( $fields as $name => $label ) {
@@ -847,7 +847,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 		 * @param string $table Generated HTML.
 		 * @param int    $car_id Car post ID.
 		 */
-		return $content . apply_filters( 'my-car/frontend-table', $table, $car_id );
+		return $content . apply_filters( 'iworks/my-car/frontend-table', $table, $car_id );
 	}
 
 	/**
@@ -897,7 +897,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 		 *
 		 * @param array $defaults Defaults: slug => field names.
 		 */
-		$defaults = apply_filters( 'my-car/engine-type-default-fields', $defaults );
+		$defaults = apply_filters( 'iworks/my-car/engine-type-default-fields', $defaults );
 		return isset( $defaults[ $slug ] ) ? $defaults[ $slug ] : $this->engine_dependent_fields;
 	}
 

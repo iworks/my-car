@@ -66,19 +66,19 @@ class iworks_my_car_cron extends iworks_my_car_base {
 		 * Register cron hooks.
 		 */
 		$this->hooks = array(
-			'my-car/cron/hourly'     => array(
+			'iworks/my-car/cron/hourly'     => array(
 				'method'   => 'run_event_hourly',
 				'interval' => 'hourly',
 			),
-			'my-car/cron/daily'      => array(
+			'iworks/my-car/cron/daily'      => array(
 				'method'   => 'run_event_daily',
 				'interval' => 'daily',
 			),
-			'my-car/cron/twicedaily' => array(
+			'iworks/my-car/cron/twicedaily' => array(
 				'method'   => 'run_event_twicedaily',
 				'interval' => 'twicedaily',
 			),
-			'my-car/cron/weekly'     => array(
+			'iworks/my-car/cron/weekly'     => array(
 				'method'   => 'run_event_weekly',
 				'interval' => 'weekly',
 			),
@@ -100,7 +100,7 @@ class iworks_my_car_cron extends iworks_my_car_base {
 	 * @return void
 	 */
 	public function run_event_hourly() {
-		do_action( 'my-car/cron/hourly/run' );
+		do_action( 'iworks/my-car/cron/hourly/run' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class iworks_my_car_cron extends iworks_my_car_base {
 	 * @return void
 	 */
 	public function run_event_twicedaily() {
-		do_action( 'my-car/cron/twicedaily/run' );
+		do_action( 'iworks/my-car/cron/twicedaily/run' );
 	}
 
 	/**
@@ -122,7 +122,7 @@ class iworks_my_car_cron extends iworks_my_car_base {
 	 * @return void
 	 */
 	public function run_event_daily() {
-		do_action( 'my-car/cron/daily/run' );
+		do_action( 'iworks/my-car/cron/daily/run' );
 	}
 
 	/**
@@ -133,6 +133,6 @@ class iworks_my_car_cron extends iworks_my_car_base {
 	 * @return void
 	 */
 	public function run_event_weekly() {
-		do_action( 'my-car/cron/weekly/run' );
+		do_action( 'iworks/my-car/cron/weekly/run' );
 	}
 }
