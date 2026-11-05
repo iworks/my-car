@@ -16,7 +16,7 @@ if ( class_exists( 'iworks_my_car_wp_admin' ) ) {
 	return;
 }
 
-require_once dirname( __DIR__ ) . '/class-my-car-base.php';
+require_once dirname( __DIR__ ) . '/class-iworks-my-car-posttype.php';
 
 /**
  * Admin functionality for My Car.
@@ -162,6 +162,9 @@ class iworks_my_car_wp_admin extends iworks_my_car_base {
 	 */
 	public function action_admin_enqueue_scripts_register_assets() {
 		$name = $this->options->get_option_name( 'admin' );
+		/**
+		 * Register admin script.
+		 */
 		$file = '/assets/scripts/my-car-admin' . $this->dev . '.js';
 		wp_register_script(
 			$name,
@@ -172,6 +175,34 @@ class iworks_my_car_wp_admin extends iworks_my_car_base {
 				'in_footer' => true,
 				'strategy'  => 'defer',
 			)
+		);
+		$translation_array = array(
+			'l10n' => array(
+				'wp_media' => array(
+					'title'  => esc_html__( 'Select or Upload Media', 'my-car' ),
+					'button' => array(
+						'text' => esc_html__( 'Use this Media', 'my-car' ),
+					),
+				),
+			),
+		);
+		wp_localize_script(
+			$name,
+			'iworks_my_car',
+			apply_filters(
+				'iworks/my-car/wp_localize_script/admin',
+				$translation_array
+			)
+		);
+		/**
+		 * Register admin style.
+		 */
+		$file = '/assets/styles/my-car-admin' . $this->dev . '.css';
+		wp_register_style(
+			$name,
+			plugins_url( $file, $this->plugin_file_path ),
+			array(),
+			$this->get_version( $file ),
 		);
 	}
 
@@ -189,12 +220,12 @@ class iworks_my_car_wp_admin extends iworks_my_car_base {
 	 *
 	 * @param string[] $links An array of the plugin's metadata, including the version, author,
 	 *                       author URI, and plugin name.
-	 * @param string  $file  Path to the plugin file relative to the plugins directory.
+	 * @param string   $file  Path to the plugin file relative to the plugins directory.
 	 *
 	 * @return string[] Array of plugin row links with our custom links added.
 	 */
 	public function plugin_row_meta( $links, $file ) {
-		if ( $this->dir . '/my-car.php' == $file ) {
+		if ( $this->dir . '/my-car.php' === $file ) {
 			if ( ! is_multisite() && current_user_can( $this->capability ) ) {
 				$links[] = sprintf(
 					'<a href="%s">%s</a>',

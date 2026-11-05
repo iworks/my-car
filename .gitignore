@@ -11,10 +11,21 @@ package-lock.json
 
 # Compiled CSS files, needed to release not in repository
 assets/styles/
-assets/scripts/wordpress-plugin-stub-*.js
+assets/scripts/my-car-*.js
 
 # release
 release/
 
+# i18n
+languages/*.mo
+
 # tests
 tests/php/.phpunit.result.cache
+
+# scratch files (OpenCode)
+.opencode/tmp/
+o
+
+# bun / local tools
+wp-cli.phar
+.env

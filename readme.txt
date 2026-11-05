@@ -67,7 +67,7 @@ You can do it on [Support Threads](https://wordpress.org/support/plugin/my-car/#
 
 Project maintained on GitHub at [iworks/my-car](https://github.com/iworks/my-car/).
 
-= 1.0.0 - 2025-03-14 =
+= 1.0.0 - 2026-03-14 =
 
 * Initial Release
 

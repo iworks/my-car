@@ -10,7 +10,7 @@ Author URI: http://iworks.pl/
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Copyright 2025-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
+Copyright 2026-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
 
 this program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 3, as
@@ -36,9 +36,9 @@ define( 'IWORKS_MY_CAR_VERSION', 'PLUGIN_VERSION' );
 // Define prefix for all plugin options and functions
 define( 'IWORKS_MY_CAR_PREFIX', 'iworks_my-car_' );
 // Get the base directory path
-$base = __DIR__;
+$my_car_base = __DIR__;
 // Set vendor directory path (where core classes are located)
-$vendor = $base . '/includes';
+$my_car_vendor = $my_car_base . '/includes';
 
 /**
  * Load the main plugin class if it doesn't exist
@@ -46,14 +46,14 @@ $vendor = $base . '/includes';
  */
 if ( ! class_exists( 'iworks_my_car' ) ) {
 	// Load the main plugin class from the includes directory
-	require_once $vendor . '/iworks/class-my-car.php';
+	require_once $my_car_vendor . '/iworks/class-iworks-my-car.php';
 }
 
 /**
  * Load configuration options
  * This file contains all plugin configuration settings
  */
-require_once $base . '/etc/options.php';
+require_once $my_car_base . '/etc/options.php';
 
 /**
  * Load the options class if it doesn't exist
@@ -61,7 +61,7 @@ require_once $base . '/etc/options.php';
  */
 if ( ! class_exists( 'iworks_options' ) ) {
 	// Load the options class from the includes directory
-	require_once $vendor . '/iworks/options/options.php';
+	require_once $my_car_vendor . '/iworks/options/options.php';
 }
 
 /**
@@ -70,23 +70,23 @@ if ( ! class_exists( 'iworks_options' ) ) {
  * Each filter returns false by default - change to true to enable the post type
  */
 // FAQ post type
-add_filter( 'my-car/load/posttype/faq', '__return_false' );
+add_filter( 'my-car/load/post-type/faq', '__return_false' );
 // Hero post type
-add_filter( 'my-car/load/posttype/hero', '__return_false' );
+add_filter( 'my-car/load/post-type/hero', '__return_false' );
 // Opinion post type
-add_filter( 'my-car/load/posttype/opinion', '__return_false' );
+add_filter( 'my-car/load/post-type/opinion', '__return_false' );
 // Custom page post type
-add_filter( 'my-car/load/posttype/page', '__return_false' );
+add_filter( 'my-car/load/post-type/page', '__return_false' );
 // Person post type
-add_filter( 'my-car/load/posttype/person', '__return_false' );
+add_filter( 'my-car/load/post-type/person', '__return_false' );
 // Custom post post type
-add_filter( 'my-car/load/posttype/post', '__return_false' );
+add_filter( 'my-car/load/post-type/post', '__return_false' );
 // Project post type
-add_filter( 'my-car/load/posttype/project', '__return_false' );
+add_filter( 'my-car/load/post-type/project', '__return_false' );
 // Promo post type
-add_filter( 'my-car/load/posttype/promo', '__return_false' );
+add_filter( 'my-car/load/post-type/promo', '__return_false' );
 // Publication post type
-add_filter( 'my-car/load/posttype/publication', '__return_false' );
+add_filter( 'my-car/load/post-type/publication', '__return_false' );
 
 /**
  * Initialize and get plugin options

@@ -2,12 +2,18 @@
     "name": "my-car",
     "title": "My Car",
     "tagline": "My Car",
+    "uri": "http://iworks.pl/iw_plugin/my-car/",
     "description": "My Car",
     "version": "0.0.1",
-    "homepage": "http://my-car.iworks.pl/",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:iworks/my-car.git",
+        "website": "https://github.com/iworks/my-car"
+    },
+    "author": "iworks",
     "tags": [
     ],
-    "author": [
+    "contributors": [
         {
             "name": "Marcin Pietrzak",
             "email": "marcin@iworks.pl",
@@ -23,34 +29,48 @@
         "PHP": "8.1"
     },
     "tested": {
-        "WordPress": "6.8"
+        "WordPress": "7.1"
+    },
+    "license": "GPL-3.0",
+    "scripts": {
+        "dev": "bun bundler/index.js",
+        "compile": "bun bundler/index.js compile",
+        "build": "bun bundler/index.js build",
+        "build:wporg": "bun bundler/index.js build:wporg",
+        "build:github": "bun bundler/index.js build:github",
+        "make-pot": "bun bundler/index.js make-pot",
+        "update-libs": "bun bundler/index.js update-libs",
+        "test": "bun bundler/index.js test",
+        "postinstall": "curl -sSfL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o wp-cli.phar || echo 'wp-cli.phar download failed - make-pot will retry it'"
     },
     "devDependencies": {
-        "grunt": "^1",
-        "load-grunt-tasks": "^0",
-        "grunt-checktextdomain": "^1",
-        "grunt-contrib-clean": "^1",
-        "grunt-contrib-compass": "^1",
-        "grunt-contrib-compress": "^1",
-        "grunt-contrib-concat": "^1",
-        "grunt-contrib-copy": "^1",
-        "grunt-contrib-cssmin": "^2",
-        "grunt-contrib-jshint": "^1",
-        "grunt-contrib-nodeunit": "^1",
-        "grunt-contrib-sass": "^1",
-        "grunt-contrib-uglify": "^1",
-        "grunt-contrib-watch": "^1",
-        "grunt-concat-css": "^0",
-        "grunt-phpunit": "^0",
-        "grunt-potomo": "^3",
-        "grunt-replace": "^1",
-        "grunt-wp-i18n": "^1"
+        "@wordpress/eslint-plugin": "^14",
+        "@wordpress/stylelint-config": "^23",
+        "archiver": "^7",
+        "clean-css": "^5",
+        "prettier": "^3",
+        "prettier-eslint": "^15.0.1",
+        "prettier-stylelint": "^0.4.2",
+        "sass": "^1.77.0",
+        "stylelint": "^16.0.1",
+        "stylelint-order": "^6.0.4",
+        "terser": "^5"
     },
-    "keywords": [],
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:iworks/my-car.git",
-        "website": "https://github.com/iworks/my-car"
-    },
-    "license": "GPL-3.0"
+    "devDependenciesOff": {},
+    "browserslist": [
+        "> 1%",
+        "ie >= 11",
+        "last 1 Android versions",
+        "last 1 ChromeAndroid versions",
+        "last 2 Chrome versions",
+        "last 2 Firefox versions",
+        "last 2 Safari versions",
+        "last 2 iOS versions",
+        "last 2 Edge versions",
+        "last 2 Opera versions"
+    ],
+    "dependencies": {
+        "postcss": "^8.5.23",
+        "postcss-scss": "^2.0.0"
+    }
 }

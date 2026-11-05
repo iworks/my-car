@@ -1,0 +1,14 @@
+@use "mixin" as *;
+
+.wp-list-table {
+	#menu_order,
+	.menu_order {
+		width: 50px;
+	}
+	.menu_order {
+		text-align: right;
+		span {
+			padding-right: var(--wpds-dimension-gap-sm);
+		}
+	}
+}

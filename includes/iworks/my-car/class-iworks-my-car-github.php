@@ -1,7 +1,6 @@
 <?php
 /*
-
-Copyright 2025-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
+Copyright 2026-PLUGIN_TILL_YEAR Marcin Pietrzak (marcin@iworks.pl)
 
 this program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
@@ -66,7 +65,7 @@ class iworks_my_car_github {
 	 * @since 1.0.0
 	 */
 	public function action_init_load_plugin_textdomain() {
-		$dir = plugin_basename( dirname( dirname( dirname( __DIR__ ) ) ) ) . '/languages';
+		$dir = plugin_basename( dirname( __DIR__, 3 ) ) . '/languages';
 		load_plugin_textdomain( 'my-car', false, $dir );
 	}
 
@@ -83,8 +82,8 @@ class iworks_my_car_github {
 			'https://api.github.com/repos/%s/releases',
 			$this->repository
 		);
-		// Get the response from the API
-		$request = wp_remote_get( $request_uri );
+		// Get the response from the API.
+		$request = wp_safe_remote_get( $request_uri );
 		// If the API response has an error code, stop
 		$response_codes = wp_remote_retrieve_response_code( $request );
 		if ( $response_codes < 200 || $response_codes >= 300 ) {
@@ -127,8 +126,8 @@ class iworks_my_car_github {
 	 * @since 1.0.0
 	 * @version 1.0.0
 	 * @param boolean $result
-	 * @param string $action
-	 * @param object $args
+	 * @param string  $action
+	 * @param object  $args
 	 * @return boolean|object|array $result
 	 */
 	public function plugin_popup( $result, $action, $args ) {
@@ -233,8 +232,8 @@ class iworks_my_car_github {
 	 * @since 1.0.0
 	 * @version 1.0.0
 	 * @param boolean $response
-	 * @param array $hook_extra
-	 * @param array $result
+	 * @param array   $hook_extra
+	 * @param array   $result
 	 * @return boolean|array $result
 	 */
 	public function install_update( $response, $hook_extra, $result ) {
@@ -268,4 +267,3 @@ class iworks_my_car_github {
 		return $result;
 	}
 }
-

@@ -1,0 +1,9 @@
+@use "mixin" as *;
+
+.iworks-field-image {
+	&-row {}
+
+	img {
+		max-width: 150px;
+	}
+}

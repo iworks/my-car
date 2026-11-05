@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Plugin Stub">
+	<description>WordPress Coding Standards for this plugin (iWorks naming kept).</description>
+
+	<rule ref="WordPress">
+		<!-- iWorks naming convention: lowercase snake_case classes with iworks_
+		     prefix — do not force PEAR-style capitalized class names. -->
+		<exclude name="PEAR.NamingConventions.ValidClassName" />
+		<!-- "wordpress" appears in text domain / option names on purpose. -->
+		<exclude name="WordPress.WP.CapitalPDangit" />
+		<!-- Hyphenated hook names are the iWorks hook API (iworks/…-style). -->
+		<exclude name="WordPress.NamingConventions.ValidHookName" />
+		<!-- Docblock style: keep inline comments and param tags relaxed
+		     (Squiz.Commenting is largely stylistic here). -->
+		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
+		<exclude name="Squiz.Commenting.FileComment" />
+	</rule>
+
+	<!-- Scope: plugin's own PHP only. Vendored iworks options/rate classes,
+	     tests, node_modules and built releases are not linted. -->
+	<file>.</file>
+	<exclude-pattern>/includes/iworks/options/</exclude-pattern>
+	<exclude-pattern>/includes/iworks/rate/</exclude-pattern>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/release/</exclude-pattern>
+	<exclude-pattern>/tests/</exclude-pattern>
+	<exclude-pattern>/vendor/</exclude-pattern>
+
+	<arg name="extensions" value="php" />
+	<arg name="colors" />
+	<arg value="sp" />
+</ruleset>
