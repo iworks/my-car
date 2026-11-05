@@ -300,7 +300,7 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 				esc_attr( $one['meta']['value'] ),
 				esc_attr( $one['meta']['key'] ),
 				esc_attr( implode( ' ', $classes ) ),
-				isset( $one['maxlength'] ) && is_integer( $one['maxlength'] ) ? sprintf( ' maxlength="%d"', $one['maxlength'] ) : ''
+				isset( $one['maxlength'] ) && is_integer( $one['maxlength'] ) ? esc_attr( sprintf( ' maxlength="%d"', $one['maxlength'] ) ) : ''
 			);
 			echo '</label>';
 			if ( isset( $one['description'] ) ) {

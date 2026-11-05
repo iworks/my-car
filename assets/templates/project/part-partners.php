@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 $partners = ( get_post_meta( get_the_ID(), '_partners', true ) );
 if ( empty( $partners ) ) {
 	return;

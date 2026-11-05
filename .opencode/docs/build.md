@@ -25,6 +25,7 @@
 | `tools.mjs`         | In-process APIs (prettier, sass, terser, clean-css), atomic writes, glob helpers               |
 | `makeZip.mjs`       | Staging copy → placeholder replacement → ZIP (archiver, level 9)                               |
 | `makePot.mjs`       | wp-cli i18n: `make-pot` → `update-po` (→ `make-mo` for github)                                 |
+| `pluginCheck.mjs`   | wporg only: Plugin Check (PCP) on the staged release (see below)                               |
 | `spawnAsync.mjs`    | `child_process.spawn` wrapper with captured output                                             |
 | `consoleHelpers.mjs`, `progressBar.mjs` | Logging, timing, build progress bar                                        |
 
@@ -38,7 +39,7 @@ script renames the plugin and the bundler follows automatically.
 | `bun run dev`          | Watcher: `.scss` → CSS pipeline, `assets/scripts/src/**` → prettier + JS pipeline (200 ms debounce); no ZIP, no i18n, no auto browser reload |
 | `bun run compile`      | One-shot asset compile with source maps (old `grunt` default task)                            |
 | `bun run build`        | Both flavors back-to-back: wporg + github                                                     |
-| `bun run build:wporg`  | Production → `release/wporg/{name}.zip`                                                       |
+| `bun run build:wporg`  | Production → `release/wporg/{name}.zip` + Plugin Check (PCP)                                 |
 | `bun run build:github` | Production + `.mo` → `release/github/{name}.zip`                                              |
 | `bun run make-pot`     | Translations only (`.pot` + `.po` update)                                                     |
 | `bun run update-libs`  | `git pull` on the vendored iWorks libraries (`includes/iworks/options`, `includes/iworks/rate`) |
@@ -46,7 +47,7 @@ script renames the plugin and the bundler follows automatically.
 | `bun run test`         | PHPUnit (`tests/php/phpunit.xml`); jshint was dropped with Grunt                              |
 | (env) `DEV_EXIT_AFTER_MS` | Dev mode exits itself after N ms — headless testing (put it in `.env`, see `.env.example`) |
 
-## Build pipeline (`bun run build:wporg`, 7 steps)
+## Build pipeline (`bun run build:wporg`, 8 steps)
 
 1. **clean** — remove built JS (`assets/scripts/*.js`), built CSS
    (`assets/styles/*.css`, `assets/styles/**/*.css`, `*.map`), `languages/*.mo`
@@ -65,7 +66,24 @@ script renames the plugin and the bundler follows automatically.
    `i18n update-po` per existing `.po`; `make-mo` only in `build:github`;
 6. **zip** — staging copy → placeholder replacement → `release/{flavor}/{version}/{name}/`
    → `release/{flavor}/{name}.zip`;
-7. done — progress bar + total time; any failure prints `BUILD FAILED` and exits 1.
+7. **plugin-check** (wporg only) — see below;
+8. done — progress bar + total time; any failure prints `BUILD FAILED` and exits 1.
+
+## Plugin Check (PCP, wporg build step 7)
+
+`bundler/pluginCheck.mjs` — copies the staged release
+(`release/wporg/{version}/{name}`) into the local WordPress plugins dir
+(parent of the plugin dir; override with `PLUGIN_CHECK_PLUGINS_DIR`) under
+the real slug, runs `wp plugin check <slug>` via `wp-cli.phar`, then removes
+the copy. **Fails the build on any ERROR** (warnings are informational; each
+error line is printed with line/column/code). Skips gracefully (with a
+warning) when `wp-cli.phar` or the Plugin Check plugin is missing.
+`PLUGIN_CHECK_SKIP=1` skips the step for one build. Requires the
+[Plugin Check](https://wordpress.org/plugins/plugin-check/) plugin installed
+locally. Current state: 12 errors, all in vendored iWorks libraries (unescaped
+`wpautop()` in the rate templates, unescaped `$args` in the options class,
+`mt_rand()` in the rate class) — reported upstream; fix there rather than
+skipping the check.
 
 Banners (grunt parity): concat = `/*! {title} - {version}\n * {website}\n *
 Copyright (c) {year}\n * Licensed {license} */`; minified JS uses the same with

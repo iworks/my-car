@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 printf( '<li class="%s">', esc_attr( implode( ' ', get_post_class() ) ) );
 printf( '<h3>%s</h3>', esc_html( get_the_title() ) );
 echo '<div class="post-inner">';

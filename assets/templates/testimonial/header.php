@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) || exit; ?>
 <section class="wp-block-group alignfull work-with-us <?php echo esc_attr( preg_replace( '/_/', '-', $args['post_type'] ) ); ?>" data-posts-per-page="<?php echo esc_attr( $args['posts_per_page'] ); ?>">
 		<div class="wp-block-group__inner-container">
 <?php

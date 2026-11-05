@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-05T20:05:45+00:00\n"
+"POT-Creation-Date: 2026-11-05T20:19:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: my-car\n"
@@ -39,40 +39,40 @@ msgstr ""
 msgid "http://iworks.pl/"
 msgstr ""
 
-#: assets/templates/opinion/header.php:3
-#: assets/templates/project/header.php:3
+#: assets/templates/opinion/header.php:4
+#: assets/templates/project/header.php:4
 msgid "What our customers are saying"
 msgstr ""
 
-#: assets/templates/project/part-data.php:7
+#: assets/templates/project/part-data.php:8
 msgid "Project data"
 msgstr ""
 
-#: assets/templates/project/part-partners.php:16
+#: assets/templates/project/part-partners.php:17
 msgid "Lider"
 msgid_plural "Liders"
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/templates/project/part-partners.php:19
+#: assets/templates/project/part-partners.php:20
 msgid "Scientific Partner"
 msgid_plural "Scientific Partners"
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/templates/project/part-partners.php:22
+#: assets/templates/project/part-partners.php:23
 msgid "Business Partner"
 msgid_plural "Business Partners"
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/templates/project/part-partners.php:25
+#: assets/templates/project/part-partners.php:26
 msgid "Partner"
 msgid_plural "Partners"
 msgstr[0] ""
 msgstr[1] ""
 
-#: assets/templates/project/part-partners.php:28
+#: assets/templates/project/part-partners.php:29
 msgid "Subcontractor"
 msgid_plural "Subcontractors"
 msgstr[0] ""

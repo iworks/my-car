@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) || exit; ?>
 <section class="wp-block-group alignfull work-with-us iworks-heroes">
 		<div class="wp-block-group__inner-container">
 <?php

@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 $classes = array(
 	'iworks-testimonial',
 );

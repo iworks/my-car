@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 if ( empty( $args['fields'] ) ) {
 	return;
 }
