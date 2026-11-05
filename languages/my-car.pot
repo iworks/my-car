@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-28T18:05:37+00:00\n"
+"POT-Creation-Date: 2026-11-05T14:39:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: my-car\n"
@@ -44,6 +44,40 @@ msgstr ""
 #: assets/templates/project/header.php:3
 msgid "What our customers are saying"
 msgstr ""
+
+#: assets/templates/project/part-data.php:7
+msgid "Project data"
+msgstr ""
+
+#: assets/templates/project/part-partners.php:16
+msgid "Lider"
+msgid_plural "Liders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/templates/project/part-partners.php:19
+msgid "Scientific Partner"
+msgid_plural "Scientific Partners"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/templates/project/part-partners.php:22
+msgid "Business Partner"
+msgid_plural "Business Partners"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/templates/project/part-partners.php:25
+msgid "Partner"
+msgid_plural "Partners"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/templates/project/part-partners.php:28
+msgid "Subcontractor"
+msgid_plural "Subcontractors"
+msgstr[0] ""
+msgstr[1] ""
 
 #: etc/options.php:124
 msgid "Example Header"
@@ -125,213 +159,215 @@ msgstr ""
 msgid "GitHub"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:94
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:93
 msgctxt "Post Type General Name"
 msgid "FAQs"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:95
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:94
 msgctxt "Post Type Singular Name"
 msgid "FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:96
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:95
 msgctxt "Menu Name"
 msgid "FAQs"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:97
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:96
 msgctxt "Admin Bar Name"
 msgid "FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:98
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:97
 msgid "Parent FAQ:"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:99
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:98
 msgid "FAQs"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:100
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:99
 msgid "Add New FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:101
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:100
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:213
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:111
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:192
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:106
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:328
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:258
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:242
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:110
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:191
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:105
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:327
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:257
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:246
 msgid "Add New"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:102
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:101
 msgid "New FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:103
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:102
 msgid "Edit FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:104
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:103
 msgid "Update FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:105
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:104
 msgid "View FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:106
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:105
 msgid "Search FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:107
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:106
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:220
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:117
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:198
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:112
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:334
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:264
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:253
+msgid "Not found"
+msgstr ""
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:107
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:221
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:118
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:199
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:113
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:335
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:265
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:249
-msgid "Not found"
-msgstr ""
-
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:108
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:221
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:119
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:200
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:114
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:336
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:266
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:250
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:254
 msgid "Not found in Trash"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:112
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:111
 msgid "FAQ"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:113
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:112
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:136
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:135
 msgid "faqs"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:147
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:146
 msgctxt "Taxonomy General Name"
 msgid "FAQ Groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:148
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:147
 msgctxt "Taxonomy Singular Name"
 msgid "FAQ Group"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:149
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:148
 msgid "Groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:150
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:149
 msgid "All FAQ Groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:151
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:150
 msgid "Parent FAQ Group"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:152
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:151
 msgid "Parent FAQ Group:"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:153
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:152
 msgid "New FAQ Group Name"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:154
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:153
 msgid "Add New FAQ Group"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:155
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:154
 msgid "Edit FAQ Group"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:156
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:155
 msgid "Update FAQ Group"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:157
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:156
 msgid "View FAQ Group"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:158
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:157
 msgid "Separate FAQ Groups with commas"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:159
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:158
 msgid "Add or remove FAQ Groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:160
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:163
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:159
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:162
 msgid "Choose from the most used"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:161
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:160
 msgid "Popular FAQ Groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:162
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:161
 msgid "Search FAQ Groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:163
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:166
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:162
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:165
 msgid "Not Found"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:177
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:176
 msgctxt "register taxonomy rest base"
 msgid "faq_groups"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:250
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:252
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:334
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:249
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:251
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:335
 msgid "Expand All"
 msgstr ""
 
+#. translators: %s: FAQ entry title.
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:286
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:292
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:293
 #, php-format
 msgid "Expand %s"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:335
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-faq.php:336
 msgid "Collapse All"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:95
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:94
 msgid "URL Configuration"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:100
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:99
 msgid "Target Button URL"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:104
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:103
 msgid "Target Button Text"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:173
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:172
 msgctxt "Promo button text"
 msgid "Find out more"
 msgstr ""
 
+#. translators: %s: article title.
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:181
 #, php-format
 msgid "Article on: %s"
@@ -390,548 +426,548 @@ msgid "Featured list navigation"
 msgstr ""
 
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-featured.php:224
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:122
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:203
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:117
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:339
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:269
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:253
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:121
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:202
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:116
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:338
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:268
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:257
 msgid "Filter items list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:81
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:80
 msgid "Learn what our employees are saying."
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:82
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:81
 msgid "Become one of them!"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:104
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:103
 msgctxt "Post Type General Name"
 msgid "Heroes"
+msgstr ""
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:104
+msgctxt "Post Type Singular Name"
+msgid "Hero"
 msgstr ""
 
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:105
-msgctxt "Post Type Singular Name"
-msgid "Hero"
-msgstr ""
-
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:106
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:107
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:108
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:109
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:131
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:130
 msgid "Heroes"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:110
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:109
 msgid "Add New Hero"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:112
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:111
 msgid "New Hero"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:113
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:112
 msgid "Edit Hero"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:114
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:113
 msgid "Update Hero"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:114
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:115
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:116
 msgid "View Hero"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:117
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:116
 msgid "Search Hero"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:120
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:119
 msgid "Hero list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:121
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:120
 msgid "Hero list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:127
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-hero.php:126
 msgid "Hero"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:79
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:78
 msgid "Opinion Data"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:84
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:83
 msgid "The Opinion Stars"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:96
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:89
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:95
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:88
 msgid "The Opinion URL"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:101
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:94
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:100
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:93
 msgid "The Opinion Author URL"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:185
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:184
 msgctxt "Post Type General Name"
 msgid "Opinions"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:186
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:185
 msgctxt "Post Type Singular Name"
 msgid "Opinion"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:186
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:187
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:188
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:189
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:190
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:212
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:211
 msgid "Opinions"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:191
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:190
 msgid "Add New Opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:193
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:192
 msgid "New Opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:194
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:193
 msgid "Edit Opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:195
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:194
 msgid "Update Opinion"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:195
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:196
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:197
 msgid "View Opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:198
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:197
 msgid "Search Opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:201
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:200
 msgid "Opinion list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:202
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:201
 msgid "Opinion list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:208
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:207
 msgid "Opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:224
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-opinion.php:223
 msgctxt "My Car Post Type Opinion SLUG"
 msgid "opinion"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:99
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:98
 msgctxt "Post Type General Name"
 msgid "Persons"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:100
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:99
 msgctxt "Post Type Singular Name"
 msgid "Person"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:100
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:101
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:102
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:103
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:104
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:126
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:125
 msgid "Persons"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:105
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:104
 msgid "Add New Person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:107
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:106
 msgid "New Person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:108
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:107
 msgid "Edit Person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:109
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:108
 msgid "Update Person"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:109
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:110
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:111
 msgid "View Person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:112
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:111
 msgid "Search Person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:115
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:114
 msgid "Person list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:116
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:115
 msgid "Person list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:122
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:121
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:62
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:202
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:206
 msgid "Person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:137
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:136
 msgctxt "My Car Post Type Person SLUG"
 msgid "person"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:150
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:149
 msgctxt "Role General Name"
 msgid "Roles"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:151
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:150
 msgctxt "Role Singular Name"
 msgid "Role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:152
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:151
 msgid "Roles"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:153
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:152
 msgid "All Roles"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:154
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:153
 msgid "Parent Role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:155
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:154
 msgid "Parent Role:"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:156
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:155
 msgid "New Role Name"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:157
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:156
 msgid "Add New Role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:158
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:157
 msgid "Edit Role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:159
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:158
 msgid "Update Role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:160
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:159
 msgid "View Role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:161
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:160
 msgid "Separate items with commas"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:162
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:161
 msgid "Add or remove items"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:164
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:163
 msgid "Popular Roles"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:165
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:164
 msgid "Search Roles"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:167
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:166
 msgid "No items"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:168
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:167
 msgid "Roles list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:169
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:168
 msgid "Roles list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:178
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-person.php:177
 msgctxt "My Car Post Type Person SLUG"
 msgid "role"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:79
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:78
 msgid "Post Gallery"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:84
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:145
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:83
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:144
 msgid "Icon"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:121
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:120
 msgid "Related posts:"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:220
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:219
 msgid "Add picture"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:240
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:239
 msgid "Select file"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:246
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-post.php:245
 msgid "Remove file"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:88
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:87
 msgid "Project Data"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:91
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:90
 msgid "Project start date"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:96
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:95
 msgid "Project end date"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:101
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:100
 msgid "Realization start date"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:106
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:105
 msgid "Realization end date"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:111
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:110
 msgid "Project cost"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:114
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:121
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:113
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:120
 msgid "PLN"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:118
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:117
 msgid "Project amount of funding"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:125
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:124
 msgid "Project currency"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:132
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:131
 msgid "Project URL"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:140
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:139
 msgid "Project Media"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:156
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:155
 msgid "Liders"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:157
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:156
 msgid "Scientific Partners"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:158
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:157
 msgid "Business Partners"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:159
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:158
 msgid "Partners"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:160
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:159
 msgid "Subcontractors"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:184
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:183
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:322
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:323
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:324
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:325
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:326
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:348
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:347
 msgid "Projects"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:247
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:246
 msgid "Browse all projects"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:277
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:276
 msgid "Opens in a new window"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:321
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:320
 msgctxt "Post Type General Name"
 msgid "Projects"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:322
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:321
 msgctxt "Post Type Singular Name"
 msgid "Project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:327
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:326
 msgid "Add New project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:329
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:328
 msgid "New project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:330
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:329
 msgid "Edit project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:331
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:330
 msgid "Update project"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:331
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:332
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:333
 msgid "View project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:334
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:333
 msgid "Search project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:337
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:336
 msgid "Project list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:338
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:337
 msgid "Project list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:344
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:343
 msgid "Project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:358
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:357
 msgctxt "slug for single project"
 msgid "project"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:380
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:379
 msgid "Add a partner"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:488
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-project.php:487
 msgid "Remove Partner"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:79
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:78
 msgid "Data"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:84
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:83
 msgid "Language"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:89
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:88
 msgid "Year"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:93
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:92
 msgid "Authors"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:97
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:96
 msgid "Where"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:102
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:101
 msgid "URL"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:106
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:105
 msgid "Conference"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:167
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:166
 msgid "Scientific publications of OPI PIB"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:251
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:250
 msgctxt "Post Type General Name"
 msgid "Publications"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:252
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:251
 msgctxt "Post Type Singular Name"
 msgid "Publication"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:252
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:253
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:254
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:255
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:256
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:278
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:277
 msgid "Publications"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:257
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:256
 msgid "Add New Publication"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:259
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:258
 msgid "New Publication"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:260
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:259
 msgid "Edit Publication"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:261
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:260
 msgid "Update Publication"
 msgstr ""
 
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:261
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:262
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:263
 msgid "View Publication"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:264
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:263
 msgid "Search Publication"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:267
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:266
 msgid "Publication list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:268
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:267
 msgid "Publication list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:274
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-publication.php:273
 msgid "Publication"
 msgstr ""
 
@@ -940,90 +976,91 @@ msgid "Testimonial Data"
 msgstr ""
 
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:68
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:203
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:207
 msgid "Position"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:177
+#. translators: %s: testimonial title.
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:179
 #, php-format
 msgid "Show Testimonial %s"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:235
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:239
 msgctxt "Post Type General Name"
 msgid "Testimonials"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:236
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:240
 msgctxt "Post Type Singular Name"
 msgid "Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:237
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:238
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:239
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:240
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:262
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:241
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:242
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:243
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:244
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:266
 msgid "Testimonials"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:241
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:245
 msgid "Add New Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:243
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:247
 msgid "New Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:244
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:248
 msgid "Edit Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:245
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:249
 msgid "Update Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:246
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:250
 msgid "View Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:247
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:251
 msgid "View Testimonials"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:248
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:252
 msgid "Search Testimonials"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:251
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:255
 msgid "Testimonials list"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:252
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:256
 msgid "Testimonials list navigation"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:258
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-testimonials.php:262
 msgid "Testimonial"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:212
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:399
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:211
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:398
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:344
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:343
 msgid "Select Image"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:348
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:347
 msgid "Delete image"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:551
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:550
 msgid "Order"
 msgstr ""
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:595
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:594
 msgid "Selected Taxonomy dosn't exists."
 msgstr ""

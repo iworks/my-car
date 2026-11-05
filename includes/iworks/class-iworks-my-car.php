@@ -2,7 +2,7 @@
 /**
  * Main plugin class file.
  *
- * @package WordPress_Plugin_Stub
+ * @package My_Car
  * @author Marcin Pietrzak <marcin@iworks.pl>
  * @copyright 2026-PLUGIN_TILL_YEAR Marcin Pietrzak
  * @license GPL-3.0-or-later

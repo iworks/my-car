@@ -42,6 +42,7 @@ script renames the plugin and the bundler follows automatically.
 | `bun run build:github` | Production + `.mo` → `release/github/{name}.zip`                                              |
 | `bun run make-pot`     | Translations only (`.pot` + `.po` update)                                                     |
 | `bun run update-libs`  | `git pull` on the vendored iWorks libraries (`includes/iworks/options`, `includes/iworks/rate`) |
+| `bun run install-libs` | Add iWorks libraries as git submodules: `bun run install-libs <https\|git> <option\|rate\|all>` — both args required |
 | `bun run test`         | PHPUnit (`tests/php/phpunit.xml`); jshint was dropped with Grunt                              |
 | (env) `DEV_EXIT_AFTER_MS` | Dev mode exits itself after N ms — headless testing (put it in `.env`, see `.env.example`) |
 
@@ -119,6 +120,9 @@ replaced at build (grunt parity) — the scaffolding script bakes it in once.
 - `2026` stays literal in built ZIPs (scaffold-only replacement).
 - Copy rules: negations must precede the catch-all `**/*` include — reordering
   silently leaks sources into the ZIPs.
+- `install-libs` uses `git submodule add --force` on purpose: it recovers a
+  half-registered state (`.gitmodules` entry without a working dir, e.g. after
+  an interrupted clone) and reuses an existing local `.git` checkout.
 - Terser mangles variable names differently than grunt-uglify (e.g. `t` vs `e`)
   — minified bundles are not byte-identical to old artifacts, only equivalent.
 - `bun run make-pot` needs network on the first run (wp-cli.phar download) —

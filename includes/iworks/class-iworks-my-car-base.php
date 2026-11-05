@@ -5,7 +5,7 @@
  * This is the base class for the My Car, providing
  * common functionality and properties for the plugin.
  *
- * @package    IWorks\WordPressPluginStub
+ * @package    My_Car
  * @subpackage Includes
  * @author     Marcin Pietrzak <marcin@iworks.pl>
  * @copyright  2026-PLUGIN_TILL_YEAR Marcin Pietrzak
@@ -34,8 +34,8 @@ if ( class_exists( 'iworks_my_car_base' ) ) {
  * This class provides the foundation for the My Car,
  * offering essential properties and methods used throughout the plugin.
  *
+ * @package My_Car
  * @since 1.0.0
- * @package IWorks\WordPressPluginStub
  */
 class iworks_my_car_base {
 

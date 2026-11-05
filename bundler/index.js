@@ -10,6 +10,7 @@
  *   build:github  — production build + .mo → release/github/{name}.zip
  *   make-pot      — translations only (.pot + .po update)
  *   update-libs   — git pull on the vendored iWorks libraries (submodules)
+ *   install-libs  — git submodule add for iWorks libs: <https|git> <option|rate|all>
  *   test          — PHPUnit (tests/php/phpunit.xml)
  */
 
@@ -191,6 +192,78 @@ async function updateLibs() {
 }
 
 /**
+ * Install vendored iWorks libraries as git submodules.
+ *
+ * Usage: bun run install-libs <https|git> <option|rate|all>
+ *
+ * @param {string[]} args [protocol, module].
+ */
+function installLibsUsage() {
+  log("Usage: bun run install-libs <https|git> <option|rate|all>", "e");
+  process.exit(1);
+}
+
+async function installLibs(args) {
+  const [protocol, module] = args || [];
+  if (!protocol || !module) {
+    installLibsUsage();
+  }
+  if (!["https", "git"].includes(protocol)) {
+    log(`Invalid protocol "${protocol}". Use https or git.`, "e");
+    installLibsUsage();
+  }
+  if (!["option", "rate", "all"].includes(module)) {
+    log(`Invalid module "${module}". Use option, rate or all.`, "e");
+    installLibsUsage();
+  }
+  const repos = {
+    option: {
+      repo: "iworks/wordpress-options-class.git",
+      path: "includes/iworks/options",
+      label: "iWorks Options",
+    },
+    rate: {
+      repo: "iworks/iworks-rate.git",
+      path: "includes/iworks/rate",
+      label: "iWorks Rate",
+    },
+  };
+  const targets = module === "all" ? Object.values(repos) : [repos[module]];
+  const url = (repo) =>
+    (protocol === "https" ? "https://github.com/" : "git@github.com:") + repo;
+  let failed = 0;
+  for (const { repo, path, label } of targets) {
+    // An empty placeholder dir (fresh clone of a repo with registered
+    // submodules) does not count as installed — only a real checkout does.
+    if (existsSync(join(root, path, ".git"))) {
+      log(`${label} — ${path} already exists, skipped`, "w");
+      continue;
+    }
+    log(`${label} — git submodule add ${url(repo)} ${path}`, "i");
+    const result = await spawnAsync(
+      "git",
+      // --force reuses an existing local .git dir and recovers a
+      // half-registered state (.gitmodules entry without a working dir).
+      ["submodule", "add", "--force", url(repo), path],
+      `git submodule add ${path}`,
+      false,
+    );
+    if (result.stdout.trim()) {
+      console.log(result.stdout.trim());
+    }
+    if (result.code !== 0) {
+      failed++;
+    }
+  }
+  if (failed) {
+    const err = new Error(`${failed} submodule install(s) failed`);
+    err.friendly = true;
+    throw err;
+  }
+  log("install-libs — done. Next: bun install && bun run build", "s");
+}
+
+/**
  * PHPUnit (grunt `test` parity, jshint dropped).
  */
 async function test() {
@@ -231,6 +304,7 @@ const modes = {
   "build:github": () => build("github"),
   "make-pot": () => executionTime("make-pot", () => makePot(false)),
   "update-libs": () => executionTime("update-libs", () => updateLibs()),
+  "install-libs": () => installLibs(process.argv.slice(3)),
   test: () => test(),
 };
 

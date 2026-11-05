@@ -40,7 +40,7 @@ class iworks_my_car_posttype_post extends iworks_my_car_posttype {
 	 * @since 1.0.0
 	 * @var string $option_name_post_gallery Option name post_gallery.
 	 */
-	private string $option_name_post_gallery = '_opi_post_gallery';
+	private string $option_name_post_gallery = '_iw_post_gallery';
 
 	/**
 	 * Constructor
@@ -198,7 +198,7 @@ class iworks_my_car_posttype_post extends iworks_my_car_posttype {
 	public function html_post_gallery( $post ) {
 		wp_nonce_field( $this->option_name_post_gallery . '_nonce', 'post_gallery_nonce' );
 		$value = intval( get_post_meta( $post->ID, $this->option_name_post_gallery, true ) );
-		echo '<div class="opi-pictures-list form-table">';
+		echo '<div class="iworks-pictures-list form-table">';
 		$value = get_post_meta( $post->ID, $this->option_name_post_gallery );
 		foreach ( $value as $attachement_id ) {
 			$src = wp_get_attachment_image_src( $attachement_id, 'small-thumbnail' );
@@ -215,10 +215,10 @@ class iworks_my_car_posttype_post extends iworks_my_car_posttype {
 		}
 		echo '</div>';
 		printf(
-			'<button class="button opi-pictures-list-add-new">%s</button>',
+			'<button class="button iworks-pictures-list-add-new">%s</button>',
 			esc_html__( 'Add picture', 'my-car' )
 		);
-		echo '<script type="text/html" id="tmpl-opi-picture-author-row">';
+		echo '<script type="text/html" id="tmpl-iworks-picture-author-row">';
 		$this->html_post_gallery_row( '{{{data.value}}}', '{{{data.src}}}' );
 		echo '</script>';
 	}
@@ -233,7 +233,7 @@ class iworks_my_car_posttype_post extends iworks_my_car_posttype {
 	private function html_post_gallery_row( $value = '', $src = '' ) {
 		?>
 <div class="image-wrapper<?php echo esc_attr( empty( $src ) ? '' : ( 0 < $value ? ' has-file' : ' has-old-file' ) ); ?>">
-	<div role="button" class="opi-image-preview" style="background-image: url(<?php echo esc_attr( $src ); ?>);"></div>
+	<div role="button" class="iworks-image-preview" style="background-image: url(<?php echo esc_attr( $src ); ?>);"></div>
 	<button type="button" class="button-select-image" aria-label="
 		<?php
 		esc_attr_e(

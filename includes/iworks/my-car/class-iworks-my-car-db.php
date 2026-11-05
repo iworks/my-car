@@ -4,7 +4,7 @@
  *
  * Handles all database operations for the My Car plugin.
  *
- * @package WordPress_Plugin_Stub
+ * @package My_Car
  * @author  Marcin Pietrzak <marcin@iworks.pl>
  * @since   1.0.0
  */

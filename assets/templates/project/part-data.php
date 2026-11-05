@@ -4,8 +4,8 @@ if ( empty( $args['fields'] ) ) {
 }
 ?>
 <section class="project-data">
-	<h2><?php esc_html_e( 'Project data', 'opi-pib-theme' ); ?></h2>
-	<table class="opi-project-details">
+	<h2><?php esc_html_e( 'Project data', 'my-car' ); ?></h2>
+	<table class="iworks-project-details">
 		<tbody>
 <?php
 foreach ( $args['fields'] as $key => $one ) {

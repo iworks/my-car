@@ -121,7 +121,7 @@ class iworks_my_car_posttype_publication extends iworks_my_car_posttype {
 		if ( $this->post_type_name !== $query->get( 'post_type' ) ) {
 			return;
 		}
-		$query->set( 'meta_key', 'opi_publication_year' );
+		$query->set( 'meta_key', '_iw_publication_year' );
 		$query->set(
 			'orderby',
 			array(
@@ -191,20 +191,20 @@ class iworks_my_car_posttype_publication extends iworks_my_car_posttype {
 		/**
 		 * Authors
 		 */
-		$value = get_post_meta( $post_ID, 'opi_publication_authors', true );
+		$value = get_post_meta( $post_ID, '_iw_publication_authors', true );
 		if ( ! empty( $value ) ) {
 			$c .= sprintf(
-				'<p class="opi-publication-authors">%s</p>',
+				'<p class="iworks-publication-authors">%s</p>',
 				$value
 			);
 		}
 		/**
 		 * Year & where
 		 */
-		$year  = get_post_meta( $post_ID, 'opi_publication_year', true );
-		$value = get_post_meta( $post_ID, 'opi_publication_where', true );
+		$year  = get_post_meta( $post_ID, '_iw_publication_year', true );
+		$value = get_post_meta( $post_ID, '_iw_publication_where', true );
 		if ( ! empty( $year ) || ! empty( $value ) ) {
-			$c .= '<p class="opi-publication-where">';
+			$c .= '<p class="iworks-publication-where">';
 			if ( ! empty( $year ) ) {
 				$c .= sprintf( '<span class="year">%d</span> ', $year );
 			}
@@ -216,10 +216,10 @@ class iworks_my_car_posttype_publication extends iworks_my_car_posttype {
 		/**
 		 * conference
 		 */
-		$value = get_post_meta( $post_ID, 'opi_publication_conference', true );
+		$value = get_post_meta( $post_ID, '_iw_publication_conference', true );
 		if ( ! empty( $value ) ) {
 			$c .= sprintf(
-				'<p class="opi-publication-conference">%s</p>',
+				'<p class="iworks-publication-conference">%s</p>',
 				$value
 			);
 		}
@@ -230,10 +230,10 @@ class iworks_my_car_posttype_publication extends iworks_my_car_posttype {
 		/**
 		 * url
 		 */
-		$value = get_post_meta( $post_ID, 'opi_publication_url', true );
+		$value = get_post_meta( $post_ID, '_iw_publication_url', true );
 		if ( ! empty( $value ) ) {
 			$c .= sprintf(
-				'<p class="opi-publication-url"><a href="%1$s" target="_blank">%1$s</a></p>',
+				'<p class="iworks-publication-url"><a href="%1$s" target="_blank">%1$s</a></p>',
 				$value
 			);
 		}

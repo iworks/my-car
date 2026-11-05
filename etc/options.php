@@ -5,8 +5,8 @@
  * This file contains the configuration options for the My Car.
  * It defines the structure of the plugin's options and settings pages.
  *
- * @package    iWorks
- * @subpackage My Car
+ * @package    My_Car
+ * @subpackage My_Car
  * @author     Marcin Pietrzak <marcin@iworks.pl>
  * @copyright  2026-PLUGIN_TILL_YEAR Marcin Pietrzak
  * @license    http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2.0

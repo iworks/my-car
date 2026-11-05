@@ -4,7 +4,7 @@
  *
  * Handles all WordPress admin-specific functionality for the plugin.
  *
- * @package WordPress_Plugin_Stub
+ * @package My_Car
  * @author  Marcin Pietrzak <marcin@iworks.pl>
  * @license GPL-2.0
  * @since   1.0.0

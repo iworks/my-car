@@ -370,7 +370,7 @@ class iworks_my_car_posttype_project extends iworks_my_car_posttype {
 	 */
 	private function html_partners( $post, $type ) {
 		printf(
-			'<div id="opi-partner-%1$s-container" class="opi-partner-container opi-partner-%1$s-container" data-partner="%1$s" aria-hidden="true">',
+			'<div id="iworks-partner-%1$s-container" class="iworks-partner-container iworks-partner-%1$s-container" data-partner="%1$s" aria-hidden="true">',
 			esc_attr( $type )
 		);
 		echo '<p>';
@@ -380,7 +380,7 @@ class iworks_my_car_posttype_project extends iworks_my_car_posttype {
 		);
 		echo '</p>';
 		printf(
-			'<div id="opi-partner-%s-container-rows">',
+			'<div id="iworks-partner-%s-container-rows">',
 			esc_attr( $type )
 		);
 		$value   = get_post_meta( $post->ID, $this->option_name_partners, true );
@@ -391,7 +391,7 @@ class iworks_my_car_posttype_project extends iworks_my_car_posttype {
 		echo '</div>';
 		echo '</div>';
 		printf(
-			'<script type="text/html" id="tmpl-opi-partner-%s-row">',
+			'<script type="text/html" id="tmpl-iworks-partner-%s-row">',
 			esc_attr( $type )
 		);
 		$this->partner_row( array(), $type );
@@ -474,7 +474,7 @@ class iworks_my_car_posttype_project extends iworks_my_car_posttype {
 				'caption' => '{{{data.caption}}}',
 			)
 		);
-		echo '<div class="opi-partner-row">';
+		echo '<div class="iworks-partner-row">';
 		echo '<span class="dashicons dashicons-move"></span>';
 		printf(
 			'<input type="text" class="text-wide" name="%s[%s][]" value="%s" />',
