@@ -69,6 +69,10 @@ if ( ! class_exists( 'iworks_options' ) ) {
  * These filters control which custom post types are loaded by the plugin
  * Each filter returns false by default - change to true to enable the post type
  */
+// Car post type
+add_filter( 'my-car/load/post-type/car', '__return_true' );
+// Service record post type
+add_filter( 'my-car/load/post-type/service-record', '__return_true' );
 // FAQ post type
 add_filter( 'my-car/load/post-type/faq', '__return_false' );
 // Hero post type

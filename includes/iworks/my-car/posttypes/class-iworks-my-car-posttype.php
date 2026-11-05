@@ -29,16 +29,18 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 	 * @var array $post_type_name Array of post type identifiers
 	 */
 	protected array $post_type_name = array(
-		'faq'         => 'iworks_faq',
-		'featured'    => 'iworks_featured',
-		'hero'        => 'iworks_hero',
-		'opinion'     => 'iworks_opinion',
-		'page'        => 'page', // for WordPress pages
-		'person'      => 'iworks_person',
-		'post'        => 'post', // for WordPress posts
-		'project'     => 'iworks_project',
-		'publication' => 'iworks_publication',
-		'testimonial' => 'iworks_testimonial',
+		'car'            => 'iworks_car',
+		'faq'            => 'iworks_faq',
+		'featured'       => 'iworks_featured',
+		'hero'           => 'iworks_hero',
+		'opinion'        => 'iworks_opinion',
+		'page'           => 'page', // for WordPress pages
+		'person'         => 'iworks_person',
+		'post'           => 'post', // for WordPress posts
+		'project'        => 'iworks_project',
+		'publication'    => 'iworks_publication',
+		'service_record' => 'iworks_car_service',
+		'testimonial'    => 'iworks_testimonial',
 	);
 
 	/**
@@ -48,8 +50,12 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 	 * @var array $taxonomy_name Array of taxonomy identifiers
 	 */
 	protected array $taxonomy_name = array(
-		'faq_group'   => 'iworks_faq_group',
-		'person_role' => 'iworks_person_role',
+		'car_body_type'      => 'iworks_car_body_type',
+		'car_brand'          => 'iworks_car_brand',
+		'car_engine_type'    => 'iworks_car_engine_type',
+		'faq_group'          => 'iworks_faq_group',
+		'person_role'        => 'iworks_person_role',
+		'service_type'       => 'iworks_car_service_type',
 	);
 
 
@@ -283,15 +289,18 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 			switch ( $one['type'] ) {
 				case 'text':
 				case 'url':
-					$classes[] = 'large-text';
+					if ( ! isset( $one['large-text'] ) || $one['large-text'] ) {
+						$classes[] = 'large-text';
+					}
 					break;
 			}
 			printf(
-				'<input type="%s" value="%s" name="%s" class="%s" />',
+				'<input type="%s" value="%s" name="%s" class="%s"%s />',
 				esc_attr( $one['type'] ),
 				esc_attr( $one['meta']['value'] ),
 				esc_attr( $one['meta']['key'] ),
-				esc_attr( implode( ' ', $classes ) )
+				esc_attr( implode( ' ', $classes ) ),
+				isset( $one['maxlength'] ) && is_integer( $one['maxlength'] ) ? sprintf( ' maxlength="%d"', $one['maxlength'] ) : ''
 			);
 			echo '</label>';
 			if ( isset( $one['description'] ) ) {
@@ -605,10 +614,6 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
-		/*
-		 * In production code, $slug should be set only once in the plugin,
-		 * preferably as a class property, rather than in each function that needs it.
-		 */
 		$post_type = get_post_type( $post_id );
 		/**
 		 *  If this isn't a correct post, don't update it.
@@ -665,6 +670,9 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 						break;
 					case 'text':
 						$value = wp_kses_post( $value );
+						if ( isset( $field['maxlength'] ) && is_integer( $field['maxlength'] ) ) {
+							$value = mb_substr( $value, 0, $field['maxlength'] );
+						}
 						break;
 				}
 				delete_post_meta( $post_id, $key );
@@ -879,7 +887,6 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 		register_taxonomy(
 			$this->taxonomy_name[ $taxonomy ],
 			apply_filters(
-				$taxonomy,
 				$this->get_register_taxonomy_filter_name( $taxonomy, 'post_types' ),
 				$registered_post_types,
 				$taxonomy,

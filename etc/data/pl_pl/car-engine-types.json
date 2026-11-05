@@ -1,0 +1,13 @@
+{
+	"schema": "1.0",
+	"engine_types": [
+		{ "name": "Benzyna", "slug": "petrol" },
+		{ "name": "Diesel", "slug": "diesel" },
+		{ "name": "LPG", "slug": "lpg" },
+		{ "name": "CNG", "slug": "cng" },
+		{ "name": "Hybryda", "slug": "hybrid" },
+		{ "name": "Hybryda plug-in", "slug": "plug-in-hybrid" },
+		{ "name": "Elektryczny", "slug": "electric" },
+		{ "name": "Wodór", "slug": "hydrogen" }
+	]
+}

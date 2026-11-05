@@ -1,0 +1,20 @@
+{
+	"schema": "1.0",
+	"service_types": [
+		{ "name": "Inspection", "slug": "inspection" },
+		{ "name": "Engine Oil", "slug": "engine-oil" },
+		{ "name": "Oil Filter", "slug": "oil-filter" },
+		{ "name": "Air Filter", "slug": "air-filter" },
+		{ "name": "Cabin Filter", "slug": "cabin-filter" },
+		{ "name": "Fuel Filter", "slug": "fuel-filter" },
+		{ "name": "Brake Pads", "slug": "brake-pads" },
+		{ "name": "Brake Rotors", "slug": "brake-rotors" },
+		{ "name": "Brake Fluid", "slug": "brake-fluid" },
+		{ "name": "Timing Belt", "slug": "timing-belt" },
+		{ "name": "Timing Chain", "slug": "timing-chain" },
+		{ "name": "Spark Plugs", "slug": "spark-plugs" },
+		{ "name": "Glow Plugs", "slug": "glow-plugs" },
+		{ "name": "Coolant", "slug": "coolant" },
+		{ "name": "Transmission Fluid", "slug": "transmission-fluid" }
+	]
+}

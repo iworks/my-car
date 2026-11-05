@@ -114,21 +114,110 @@ Every file: `defined( 'ABSPATH' ) || exit;` + `class_exists` guard + own
 - **`class-iworks-my-car-posttype.php`** — abstract
   `iworks_my_car_posttype extends …_base`:
     - `$post_type_name` map — key (filename slug) → registered post type:
-      `faq` → `iworks_faq`, `featured` → `iworks_featured`, `hero` → `iworks_hero`,
+      `car` → `iworks_car`, `faq` → `iworks_faq`, `featured` → `iworks_featured`, `hero` → `iworks_hero`,
       `opinion` → `iworks_opinion`, `page` → `page`, `person` → `iworks_person`,
       `post` → `post`, `project` → `iworks_project`,
       `publication` → `iworks_publication`, `testimonial` → `iworks_testimonial`;
-    - `$taxonomy_name` map — `faq_group` → `iworks_faq_group`,
+    - `$taxonomy_name` map — `car_body_type` → `iworks_car_body_type`,
+      `car_brand` → `iworks_car_brand`, `car_engine_type` → `iworks_car_engine_type`,
+      `faq_group` → `iworks_faq_group`,
       `person_role` → `iworks_person_role`;
     - `$meta_boxes` (per-type metabox definitions), `$option_name_media`,
       `$load_plugin_admin_assets` flag.
 - Concrete classes: `class-iworks-my-car-posttype-{name}.php`
-  — one file per type (faq, featured, hero, opinion, page, person, post,
+  — one file per type (car, faq, featured, hero, opinion, page, person, post,
   project, publication, testimonials). Class name:
   `iworks_my_car_posttype_{name}`.
 - Templates rendered by the types live in `assets/templates/{featured,hero,opinion,project,testimonial}/`.
 - **Enabling**: `add_filter( 'my-car/load/post-type/{name}', '__return_true' )`
   — `{name}` is derived from the filename (see pitfalls in `project.md`).
+
+- **Car post type** (`posttype-car.php`) — registers `iworks_car` with taxonomies
+  `iworks_car_brand` (hierarchical "Brands & Models" — models are child terms
+  of their brand), `iworks_car_body_type`, `iworks_car_engine_type`
+  (all defined in the base `$post_type_name` / `$taxonomy_name` maps),
+  a "Vehicle Digital Passport" metabox, an archive
+  toggle driven by the `car_enable_archive` option, an admin-list "Show" column
+  opening a modal (`<dialog>` + `admin-ajax.php?action=my-car-get-car`, JS in
+  `assets/scripts/src/admin/car-modal.js`, styles in `assets/styles/admin/car-modal.css`),
+  and a settings-page "Import" tab (see below) to import predefined terms.
+  Text metabox fields support an integer `maxlength` option (rendered as an
+  input attribute and enforced again server-side on save); the VIN field
+  uses `maxlength: 17`.
+  Passport fields in the modal are engine-type aware: fields
+  `engine_capacity`, `battery_capacity` and `electric_range` are shown only
+  when the car's engine type terms enable them. The modal has three tabs:
+  Car Data, Mileage Log and Service Records (the latter reads the join
+  table via `get_car_service_records()`: date, mileage, service types,
+  workshop, translated status). Which fields apply is
+  configured per term on the Engine Types edit screen (checkbox group
+  "Passport Fields", stored in term meta `_iw_engine_type_fields` via
+  `render_engine_type_*_fields()` / `save_engine_type_fields()`); terms
+  without a saved config fall back to defaults per slug
+  (`get_engine_type_fields_defaults()`, filter
+  `my-car/engine-type-default-fields`). The field set is also filterable via
+  `my-car/passport-fields`. On the frontend, single car pages get a
+  "Vehicle Digital Passport" data table (passport fields + taxonomy links)
+  and a "Mileage Log" table appended to the content via
+  `filter_the_content()` (filter `my-car/frontend-table`); styles live in
+  `assets/styles/frontend/car.css` and are compiled into
+  `assets/styles/my-car-frontend.css`. Frontend visibility of VIN, the
+  license plate and the mileage log is configured per car in the side
+  metabox "Frontend Visibility" (`render_meta_box_frontend_visibility()` /
+  `save_frontend_visibility()`, meta `_iw_frontend_visibility`): show for
+  owner (default — users who can edit the car), show for all, or hide;
+  checked by `is_visible_on_frontend()`. The admin modal always shows
+  everything. Visibility keys: `vin`, `license_plate`, `mileage_log`,
+  `service_records` (the frontend "Service Records" table: date, mileage,
+  service types — same data source as the modal tab).
+- **Predefined data** — `etc/data/car-brands.json` (brands, each with nested
+  models), `etc/data/car-body-types.json`, `etc/data/car-engine-types.json`.
+  The settings page ("Cars → Settings") has a side metabox with a nonce-protected
+  `admin-post.php?action=my-car-import-predefined` handler
+  (`handle_import_predefined()` in the car posttype class) that inserts missing
+  terms — brands at the top level, models as children of their brand —
+  (skip-existing) and reports counts via a transient admin notice.
+
+## Service Records (posttype-service-record.php)
+
+- **Post type** `iworks_car_service` (source key `service_record`; WP limit
+  is 20 chars so "service_record" would not fit) — non-public, UI under the
+  Cars menu, supports title + editor (editor = work description).
+- **"Service Event" metabox**: Car (custom `render_meta_car()` select of
+  cars), Date, Mileage, Workshop, Cost, Status (Done/Planned).
+- **Join table** `wp_my_car_car_records` (car_id, record_id, event_date,
+  event_mileage, unique key car_record) — managed by
+  `includes/iworks/my-car/class-iworks-my-car-db.php` (aqualog-style:
+  versioned `db_install()` on activation + shutdown, `drop_tables()` on
+  uninstall hook, tables registered on `$wpdb`).
+  `link_record()` / `unlink_record()` / `unlink_car()` / `get_car_records()`
+  / `get_latest_car_record()` are its API.
+- **Sync**: on `save_post_{post_type}` (priority 20) the record links to its
+  car in the join table (empty car/date unlinks); record trash/delete and
+  car delete remove rows. Empty titles are auto-filled "Car — Date".
+- **Taxonomy** `iworks_car_service_type` (flat, tags-style) — "Service
+  Types": Inspection, Engine Oil, filters, brake parts, timing, spark/glow
+  plugs, fluids. Importable via the Import tab (`import_service_types`
+  option, `etc/data/car-service-types.json`); shown as an admin-list column.
+  Registered with `show_in_rest => true` (rest_base `car_service_types`) —
+  required for term editing in the editor. Its screen is added under the
+  Cars menu manually via `action_admin_menu()` (WP auto-adds taxonomy
+  submenus only for top-level post type menus). NOTE: the shared
+  `register_taxonomy()` wrapper in the base posttype class had a broken
+  `apply_filters()` arg order (filter name leaked into the object type);
+  fixed — use it or register directly like the car class does.
+- **Admin list**: Car, Service Types, Date, Mileage, Workshop, Status
+  columns; Date/Mileage sortable (via `pre_get_posts` meta sort).
+- **Locale presets**: `get_data_file_path()` resolves data files
+  locale-aware — `etc/data/{locale}/{file}` (locale lowercased from
+  `get_locale()`, e.g. `pl_pl`) first, falling back to the base
+  `etc/data/{file}` when the preset dir/file doesn't exist. Polish
+  translations live in `etc/data/pl_pl/` (same schema and slugs; brands
+  untranslated as proper nouns). `insert_term()` skips existing slugs, so
+  re-importing never duplicates or renames already-imported terms.
+- Enabled with `add_filter( 'my-car/load/post-type/service-record', '__return_true' )`
+  in `my-car.php`. The posttypes loader accepts hyphenated filenames and
+  maps them to underscored class names.
 
 ## Vendored frameworks (includes/iworks/)
 

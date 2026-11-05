@@ -68,7 +68,7 @@ class iworks_my_car_posttypes {
 			 * Validate the filename format
 			 * Only process files that match the expected pattern
 			 */
-			if ( ! preg_match( '/^class-iworks-my-car-posttype-([a-z]+).php$/', $filename, $matches ) ) {
+			if ( ! preg_match( '/^class-iworks-my-car-posttype-([a-z-]+).php$/', $filename, $matches ) ) {
 				continue;
 			}
 
@@ -95,9 +95,9 @@ class iworks_my_car_posttypes {
 				include_once $posttypes_classes_dir . $filename;
 
 				/**
-				 * Generate the class name
+				 * Generate the class name (underscores for hyphens)
 				 */
-				$class_name = sprintf( 'iworks_my_car_posttype_%s', $posttype_name );
+				$class_name = sprintf( 'iworks_my_car_posttype_%s', str_replace( '-', '_', $posttype_name ) );
 
 				/**
 				 * Initialize the post type class

@@ -50,7 +50,9 @@ class iworks_my_car_db extends iworks_my_car_base {
 	 * @since 1.0.0
 	 * @var string[]
 	 */
-	private array $table_names = array();
+	private array $table_names = array(
+		'my_car_car_records',
+	);
 	/**
 	 * Class constructor.
 	 *
@@ -101,16 +103,138 @@ class iworks_my_car_db extends iworks_my_car_base {
 			add_option( $this->_db_version, 0, '', 'no' );
 		}
 		/**
-		 * chemistry table
+		 * Car-record join table.
 		 */
 		$version_to_update = 2;
 		if ( $db_version < $version_to_update ) {
-			// $sql = "CREATE TABLE IF NOT EXISTS X (id bigint(20) unsigned NOT NULL AUTO_INCREMENT)";
+			global $wpdb;
+			$table_name      = $wpdb->prefix . 'my_car_car_records';
+			$charset_collate = $wpdb->get_charset_collate();
+			$sql             = "CREATE TABLE $table_name (
+				id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+				car_id bigint(20) unsigned NOT NULL COMMENT 'Car post ID (iworks_car)',
+				record_id bigint(20) unsigned NOT NULL COMMENT 'Service record post ID (iworks_service_record)',
+				event_date date NOT NULL COMMENT 'Date of the service event',
+				event_mileage bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT 'Mileage at the event',
+				created_at datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation timestamp',
+				PRIMARY KEY  (id),
+				KEY car_id (car_id),
+				KEY record_id (record_id),
+				KEY event_date (event_date),
+				UNIQUE KEY car_record (car_id, record_id)
+			) $charset_collate;";
 			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-			// dbDelta( $sql );
+			dbDelta( $sql );
 			update_option( $this->_db_version, $version_to_update );
 			$db_version = intval( get_option( $this->_db_version ) );
 		}
+	}
+
+	/**
+	 * Link a service record to a car.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int    $car_id        Car post ID.
+	 * @param int    $record_id     Service record post ID.
+	 * @param string $event_date    Event date (Y-m-d).
+	 * @param int    $event_mileage Mileage at the event.
+	 * @return void
+	 */
+	public function link_record( $car_id, $record_id, $event_date, $event_mileage ) {
+		global $wpdb;
+		if ( ! $car_id || ! $record_id ) {
+			return;
+		}
+		$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$wpdb->prepare(
+				"INSERT INTO {$wpdb->my_car_car_records} (car_id, record_id, event_date, event_mileage) VALUES (%d, %d, %s, %d) ON DUPLICATE KEY UPDATE event_date = VALUES(event_date), event_mileage = VALUES(event_mileage)", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				$car_id,
+				$record_id,
+				$event_date,
+				$event_mileage
+			)
+		);
+	}
+
+	/**
+	 * Unlink a service record from all cars.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $record_id Service record post ID.
+	 * @return void
+	 */
+	public function unlink_record( $record_id ) {
+		global $wpdb;
+		if ( ! $record_id ) {
+			return;
+		}
+		$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$wpdb->prepare(
+				"DELETE FROM {$wpdb->my_car_car_records} WHERE record_id = %d", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				$record_id
+			)
+		);
+	}
+
+	/**
+	 * Unlink all records of a car.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $car_id Car post ID.
+	 * @return void
+	 */
+	public function unlink_car( $car_id ) {
+		global $wpdb;
+		if ( ! $car_id ) {
+			return;
+		}
+		$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$wpdb->prepare(
+				"DELETE FROM {$wpdb->my_car_car_records} WHERE car_id = %d", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				$car_id
+			)
+		);
+	}
+
+	/**
+	 * Get service records linked to a car, newest first.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int   $car_id Car post ID.
+	 * @param array $args   Optional: per_page, paged.
+	 * @return object[] Rows: record_id, event_date, event_mileage.
+	 */
+	public function get_car_records( $car_id, $args = array() ) {
+		global $wpdb;
+		if ( ! $car_id ) {
+			return array();
+		}
+		$per_page = isset( $args['per_page'] ) ? absint( $args['per_page'] ) : 0;
+		$sql      = sprintf(
+			'SELECT record_id, event_date, event_mileage FROM %s WHERE car_id = %%d ORDER BY event_date DESC, event_mileage DESC%s',
+			$wpdb->my_car_car_records,
+			$per_page ? sprintf( ' LIMIT %d', $per_page ) : ''
+		);
+		return $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$wpdb->prepare( $sql, $car_id ) // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		);
+	}
+
+	/**
+	 * Get the latest linked record data for a car.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $car_id Car post ID.
+	 * @return object|null Row: record_id, event_date, event_mileage.
+	 */
+	public function get_latest_car_record( $car_id ) {
+		$rows = $this->get_car_records( $car_id, array( 'per_page' => 1 ) );
+		return $rows ? $rows[0] : null;
 	}
 
 	/**
@@ -138,7 +262,7 @@ class iworks_my_car_db extends iworks_my_car_base {
 		// Re-enable foreign key checks.
 		$wpdb->query( 'SET FOREIGN_KEY_CHECKS = 1' ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
-		// Delete the database version option
+		// Delete the database version option.
 		delete_option( $this->_db_version );
 	}
 }

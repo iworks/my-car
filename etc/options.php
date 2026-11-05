@@ -5,8 +5,8 @@
  * This file contains the configuration options for the My Car.
  * It defines the structure of the plugin's options and settings pages.
  *
- * @package    My_Car
- * @subpackage My_Car
+ * @package    iWorks
+ * @subpackage My Car
  * @author     Marcin Pietrzak <marcin@iworks.pl>
  * @copyright  2026-PLUGIN_TILL_YEAR Marcin Pietrzak
  * @license    http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2.0
@@ -31,9 +31,9 @@ function iworks_my_car_options() {
 	$options = array();
 
 	/**
-	 * Parent page placeholder (uncomment and set as needed)
+	 * Parent page for submenu items: the Cars post type menu
 	 */
-	$parent = null;
+	$parent = 'edit.php?post_type=iworks_car';
 
 	/**
 	 * Main settings configuration
@@ -55,7 +55,7 @@ function iworks_my_car_options() {
 		/**
 		 * Title of the options page
 		 */
-		'page_title' => __( 'My Car', 'my-car' ),
+		'page_title' => __( 'Settings', 'my-car' ),
 
 		/**
 		 * Menu type for the options page
@@ -75,7 +75,7 @@ function iworks_my_car_options() {
 		 * - 'media'        - Add under Media menu
 		 * - 'custom'       - Custom menu position (requires 'menu_slug' to be set)
 		 */
-		'menu'       => 'options',
+		'menu'       => 'submenu',
 
 		/**
 		 * Parent page for submenu items
@@ -102,16 +102,16 @@ function iworks_my_car_options() {
 		 * Example for nesting under a plugin's main menu:
 		 * 'parent' => 'my-plugin-slug',
 		 */
-			'parent' => $parent,
+		'parent'     => $parent,
 
 		/**
 		 * Use tabs for options page
 		 *
-		 * possible values:
+		 * Possible values:
 		 * - true - use tabs
 		 * - false - options will be shown flat on one screen
 		 */
-		'use_tabs'   => false,
+		'use_tabs'   => true,
 
 		/**
 		 * Array of options fields
@@ -121,27 +121,76 @@ function iworks_my_car_options() {
 			array(
 				array(
 					'type'  => 'heading',
-					'label' => __( 'Example Header', 'my-car' ),
+					'label' => __( 'General', 'my-car' ),
 					'since' => '1.0.0',
 				),
 				array(
-					'name'              => 'example_text',
-					'type'              => 'text',
-					'th'                => __( 'Example Text', 'my-car' ),
-					'description'       => __( 'Enter some text.', 'my-car' ),
-					'classes'           => array( 'small-text' ),
-					'sanitize_callback' => 'esc_html',
+					'name'              => 'units_distance',
+					'type'              => 'select',
+					'th'                => __( 'Distance Unit', 'my-car' ),
+					'description'       => __( 'Unit used for distances and odometer readings.', 'my-car' ),
+					'options'           => array(
+						'km' => esc_html__( 'Kilometers (km)', 'my-car' ),
+						'mi' => esc_html__( 'Miles (mi)', 'my-car' ),
+					),
+					'default'           => 'km',
+					'sanitize_callback' => 'sanitize_key',
 					'since'             => '1.0.0',
 				),
 				array(
-					'name'              => 'example_textarea',
-					'type'              => 'textarea',
-					'th'                => __( 'Example Textarea', 'my-car' ),
-					'description'       => __( 'Enter some text.', 'my-car' ),
-					'classes'           => array( 'code', 'large-text' ),
-					'sanitize_callback' => 'wp_kses_post',
+					'name'              => 'currency',
+					'type'              => 'select',
+					'th'                => __( 'Currency', 'my-car' ),
+					'description'       => __( 'Currency used for costs and expenses.', 'my-car' ),
+					'options'           => array(
+						'PLN' => esc_html__( 'Polish Złoty (PLN)', 'my-car' ),
+						'EUR' => esc_html__( 'Euro (EUR)', 'my-car' ),
+						'USD' => esc_html__( 'US Dollar (USD)', 'my-car' ),
+						'GBP' => esc_html__( 'British Pound (GBP)', 'my-car' ),
+					),
+					'default'           => 'PLN',
+					'sanitize_callback' => 'sanitize_text_field',
 					'since'             => '1.0.0',
-					'rows'              => 5,
+				),
+				array(
+					'type'  => 'heading',
+					'label' => __( 'Cars', 'my-car' ),
+					'since' => '1.0.0',
+				),
+				array(
+					'name'              => 'car_enable_archive',
+					'type'              => 'checkbox',
+					'th'                => __( 'Cars Archive', 'my-car' ),
+					'description'       => __( 'Enable the public cars archive page.', 'my-car' ),
+					'default'           => 0,
+					'sanitize_callback' => 'absint',
+					'classes'           => array( 'switch-button' ),
+					'since'             => '1.0.0',
+				),
+				array(
+					'name'              => 'car_show_vin',
+					'type'              => 'checkbox',
+					'th'                => __( 'Show VIN', 'my-car' ),
+					'description'       => __( 'Display the VIN number on public car pages.', 'my-car' ),
+					'default'           => 0,
+					'sanitize_callback' => 'absint',
+					'classes'           => array( 'switch-button' ),
+					'since'             => '1.0.0',
+				),
+				array(
+					'type'  => 'heading',
+					'label' => __( 'Data', 'my-car' ),
+					'since' => '1.0.0',
+				),
+				array(
+					'name'              => 'delete_on_uninstall',
+					'type'              => 'checkbox',
+					'th'                => __( 'Delete Data on Uninstall', 'my-car' ),
+					'description'       => __( 'Remove all plugin data (posts, options, meta) when the plugin is uninstalled.', 'my-car' ),
+					'default'           => 0,
+					'sanitize_callback' => 'absint',
+					'classes'           => array( 'switch-button' ),
+					'since'             => '1.0.0',
 				),
 			)
 		),

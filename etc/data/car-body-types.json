@@ -1,0 +1,19 @@
+{
+	"schema": "1.0",
+	"body_types": [
+		{ "name": "Sedan", "slug": "sedan" },
+		{ "name": "Hatchback", "slug": "hatchback" },
+		{ "name": "SUV", "slug": "suv" },
+		{ "name": "Crossover", "slug": "crossover" },
+		{ "name": "Coupe", "slug": "coupe" },
+		{ "name": "Cabriolet", "slug": "cabriolet" },
+		{ "name": "Roadster", "slug": "roadster" },
+		{ "name": "Station Wagon", "slug": "station-wagon" },
+		{ "name": "Van", "slug": "van" },
+		{ "name": "Minivan", "slug": "minivan" },
+		{ "name": "Pickup", "slug": "pickup" },
+		{ "name": "Limousine", "slug": "limousine" },
+		{ "name": "Microcar", "slug": "microcar" },
+		{ "name": "Off-road", "slug": "off-road" }
+	]
+}

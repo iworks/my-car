@@ -25,6 +25,7 @@ tests/php/.phpunit.result.cache
 # scratch files (OpenCode)
 .opencode/tmp/
 o
+.playwright-mcp/
 
 # bun / local tools
 wp-cli.phar

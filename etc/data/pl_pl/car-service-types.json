@@ -1,0 +1,20 @@
+{
+	"schema": "1.0",
+	"service_types": [
+		{ "name": "Przegląd", "slug": "inspection" },
+		{ "name": "Olej silnikowy", "slug": "engine-oil" },
+		{ "name": "Filtr oleju", "slug": "oil-filter" },
+		{ "name": "Filtr powietrza", "slug": "air-filter" },
+		{ "name": "Filtr kabinowy", "slug": "cabin-filter" },
+		{ "name": "Filtr paliwa", "slug": "fuel-filter" },
+		{ "name": "Klocki hamulcowe", "slug": "brake-pads" },
+		{ "name": "Tarcze hamulcowe", "slug": "brake-rotors" },
+		{ "name": "Płyn hamulcowy", "slug": "brake-fluid" },
+		{ "name": "Pasek rozrządu", "slug": "timing-belt" },
+		{ "name": "Łańcuch rozrządu", "slug": "timing-chain" },
+		{ "name": "Świece zapłonowe", "slug": "spark-plugs" },
+		{ "name": "Świece żarowe", "slug": "glow-plugs" },
+		{ "name": "Płyn chłodniczy", "slug": "coolant" },
+		{ "name": "Olej przekładniowy", "slug": "transmission-fluid" }
+	]
+}
