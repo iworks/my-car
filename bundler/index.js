@@ -302,8 +302,9 @@ const modes = {
       compileAssets({ maps: true, strip: false, format: false }),
     ),
   build: async () => {
-    await build("wporg");
+    // github first: a failing wporg Plugin Check must not block the github ZIP.
     await build("github");
+    await build("wporg");
   },
   "build:wporg": () => build("wporg"),
   "build:github": () => build("github"),

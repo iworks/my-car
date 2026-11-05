@@ -134,6 +134,7 @@ export function copyRules(flavor) {
     { glob: ".env*", include: false },
     { glob: ".editorconfig", include: false },
     { glob: ".opencode/**", include: false },
+    { glob: ".playwright-mcp/**", include: false },
     { glob: "bundler/**", include: false },
     { glob: "**/Gruntfile.js", include: false },
     { glob: "bun.lock", include: false },

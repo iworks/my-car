@@ -26,6 +26,14 @@
 | `makeZip.mjs`       | Staging copy → placeholder replacement → ZIP (archiver, level 9)                               |
 | `makePot.mjs`       | wp-cli i18n: `make-pot` → `update-po` (→ `make-mo` for github)                                 |
 | `pluginCheck.mjs`   | wporg only: Plugin Check (PCP) on the staged release (see below)                               |
+
+Translations: `languages/my-car.pot` (template) plus per-locale
+`my-car-{locale}.po` files (currently `pl_PL`, fully translated); the
+bundler's `update-po` keeps existing `.po` files in sync with the `.pot` and
+the github build compiles `.mo`. On a site running Polish, the translation
+loads from the plugin's own `languages/` dir (via the github class's
+`load_plugin_textdomain` on `init`) or from
+`wp-content/languages/plugins/my-car-{locale}.mo`.
 | `spawnAsync.mjs`    | `child_process.spawn` wrapper with captured output                                             |
 | `consoleHelpers.mjs`, `progressBar.mjs` | Logging, timing, build progress bar                                        |
 
@@ -43,8 +51,9 @@ script renames the plugin and the bundler follows automatically.
 
 Excluded from the release ZIPs (copy rules in `bundler/config.mjs`):
 `AGENTS.md`, `README.md`, `phpcs.xml.dist`, `.env*`, `.editorconfig`,
-`.git*` files, `bundler/`, `.opencode/`, `tests/`, `release/`, `wp-cli.phar`,
-`node_modules/`, source maps.
+`.git*` files, `.opencode/`, `.playwright-mcp/`, `bundler/`, `tests/`,
+`release/`, `wp-cli.phar`, `node_modules/`, source maps, and (temporarily)
+the `includes/iworks/rate/` library.
 | `bun run build:github` | Production + `.mo` → `release/github/{name}.zip`                                              |
 | `bun run make-pot`     | Translations only (`.pot` + `.po` update)                                                     |
 | `bun run update-libs`  | `git pull` on the vendored iWorks libraries (`includes/iworks/options`, `includes/iworks/rate`) |
