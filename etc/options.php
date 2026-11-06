@@ -200,6 +200,20 @@ if ( ! function_exists( 'iworks_my_car_options' ) ) {
 						'classes'           => array( 'switch-button' ),
 						'since'             => '1.0.0',
 					),
+					array(
+						'type'  => 'heading',
+						'label' => __( 'Misc', 'my-car' ),
+						'since' => '1.0.0',
+					),
+					array(
+						'name'              => 'admin_menu_priority',
+						'type'              => 'number',
+						'th'                => __( 'Admin Menu Priority', 'my-car' ),
+						'description'       => __( 'Position of the Cars menu in the admin sidebar. Lower value = higher placement.', 'my-car' ),
+						'default'           => 60,
+						'sanitize_callback' => 'absint',
+						'since'             => '1.0.0',
+					),
 				)
 			),
 

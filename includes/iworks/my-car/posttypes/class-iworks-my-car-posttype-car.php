@@ -306,6 +306,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 	 * @since 1.0.0
 	 */
 	public function action_init_register_post_type() {
+		$this->check_option_object();
 		$labels = array(
 			'name'               => _x( 'Cars', 'Post Type General Name', 'my-car' ),
 			'singular_name'      => _x( 'Car', 'Post Type Singular Name', 'my-car' ),
@@ -339,7 +340,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 			'exclude_from_search' => false,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
-			'menu_position'       => 10,
+			'menu_position'       => absint( $this->options->get_option( 'admin_menu_priority' ) ) ?: 60,
 			'menu_icon'           => 'dashicons-car',
 			'show_in_admin_bar'   => true,
 			'show_in_nav_menus'   => true,
