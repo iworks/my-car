@@ -47,4 +47,4 @@ Requirements: [Bun](https://bun.sh) >= 1.3, PHP >= 8.1.
 
 ## Changelog
 
-[CHANGELOG](CHANGELOG)
+[CHANGELOG](CHANGELOG.md)
