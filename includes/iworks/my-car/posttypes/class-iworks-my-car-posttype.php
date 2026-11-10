@@ -222,8 +222,19 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 		if ( empty( $this->meta_boxes ) ) {
 			return;
 		}
+		$screen_id = null;
+		$screen    = get_current_screen();
+		if ( is_a( $screen, 'WP_Screen' ) ) {
+			$screen_id = $screen->id;
+		}
 		foreach ( $this->meta_boxes as $meta_box_key => $meta_box_data ) {
 			foreach ( $meta_box_data as $id => $data ) {
+				if ( ! empty( $data['folded'] ) && $screen_id ) {
+					add_filter(
+						sprintf( 'postbox_classes_%s_%s', $screen_id, $id ),
+						array( $this, 'filter_postbox_classes_folded' )
+					);
+				}
 				add_meta_box(
 					$id,
 					$data['title'],
@@ -238,6 +249,19 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 				);
 			}
 		}
+	}
+
+	/**
+	 * Add the "closed" class to metaboxes marked as folded.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $classes Postbox classes.
+	 * @return array
+	 */
+	public function filter_postbox_classes_folded( $classes ) {
+		$classes[] = 'closed';
+		return $classes;
 	}
 
 	/**
@@ -417,7 +441,7 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 	 * @param array   $one  Field configuration.
 	 */
 	private function render_meta_radio( $post, $one ) {
-		$value = get_post_meta( $post->ID, $one['name'], true );
+		$value = get_post_meta( $post->ID, $one['meta']['key'], true );
 		echo '<p>';
 		if ( isset( $one['label'] ) ) {
 			echo '<label>';
@@ -428,12 +452,12 @@ abstract class iworks_my_car_posttype extends iworks_my_car_base {
 		echo '</p>';
 		printf(
 			'<ul name="%s">',
-			esc_attr( $one['name'] )
+			esc_attr( $one['meta']['key'] )
 		);
 		foreach ( $one['options'] as $option_value => $option_name ) {
 			printf(
 				'<li><label><input name="%s" type="radio" value="%s" %s>%s</label></li>',
-				esc_attr( $one['name'] ),
+				esc_attr( $one['meta']['key'] ),
 				esc_attr( $option_value ),
 				checked( $option_value, $value, false ),
 				esc_html( $option_name )

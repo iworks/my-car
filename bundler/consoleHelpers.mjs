@@ -10,6 +10,8 @@ const COLORS = {
   reset: "\x1b[0m",
 };
 
+import { progressState } from "./progressBar.mjs";
+
 /**
  * Print a log line.
  *
@@ -17,6 +19,10 @@ const COLORS = {
  * @param {string} type info/i, success/s, warning/w, error/e.
  */
 export function log(text, type = "info") {
+  if (progressState.dirty) {
+    process.stdout.write("\n");
+    progressState.dirty = false;
+  }
   const key = Object.keys(COLORS).find((k) => k.startsWith(type)) || "info";
   console.log(`${COLORS[key]}${text}${COLORS.reset}`);
 }

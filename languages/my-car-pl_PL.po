@@ -179,442 +179,445 @@ msgstr "Wesprzyj"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:139
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:170
 msgid "Frontend Visibility"
 msgstr "Widoczność na stronie"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:160
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:725
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:191
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:868
 msgid "VIN"
 msgstr "Numer VIN"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:161
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:295
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:731
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:192
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:332
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:875
 msgid "License Plate Number"
 msgstr "Numer rejestracyjny"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:162
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:543
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:821
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:193
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:666
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:988
 msgid "Mileage Log"
 msgstr "Przebieg"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:163
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:544
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:833
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:194
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:667
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1000
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:111
 msgid "Service Records"
 msgstr "Historia serwisowa"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:166
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:197
 msgid "Show for owner"
 msgstr "Pokaż właścicielowi"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:167
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:198
 msgid "Show for all"
 msgstr "Pokaż wszystkim"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:168
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:199
 msgid "Hide"
 msgstr "Ukryj"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:185
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:216
 msgid "Controls the frontend data table only — the admin modal always shows everything."
 msgstr "Steruje wyłącznie tabelą na stronie — okno modalne w administracji zawsze pokazuje wszystko."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:258
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:801
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:289
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:968
 msgid "Vehicle Digital Passport"
 msgstr "Cyfrowa karta pojazdu"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:263
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:294
 msgid "Vehicle Identification Number (VIN)"
 msgstr "Numer identyfikacyjny pojazdu (VIN)"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:270
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:726
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:301
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:869
 msgid "Production Year"
 msgstr "Rok produkcji"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:275
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:727
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:946
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:306
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:870
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1113
 msgid "Engine Capacity (cm³)"
 msgstr "Pojemność silnika (cm³)"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:280
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:728
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:311
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:871
 msgid "Engine Power (kW)"
 msgstr "Moc silnika (kW)"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:285
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:729
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:947
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:322
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:873
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1114
 msgid "Battery Capacity (kWh)"
 msgstr "Pojemność baterii (kWh)"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:290
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:730
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:948
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:327
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:874
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1115
 msgid "Electric Range (km)"
 msgstr "Zasięg elektryczny (km)"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:311
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:434
 msgctxt "Post Type General Name"
 msgid "Cars"
 msgstr "Samochody"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:312
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:435
 msgctxt "Post Type Singular Name"
 msgid "Car"
 msgstr "Samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:313
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:436
 msgctxt "Menu Name"
 msgid "Cars"
 msgstr "Samochody"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:314
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:437
 msgctxt "Admin Bar Name"
 msgid "Car"
 msgstr "Samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:315
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:438
 msgid "Parent Car:"
 msgstr "Samochód nadrzędny:"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:316
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:439
 msgid "All Cars"
 msgstr "Wszystkie samochody"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:317
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:440
 msgid "Add New Car"
 msgstr "Utwórz samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:318
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:441
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:113
 msgid "Add New"
 msgstr "Utwórz"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:319
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:442
 msgid "New Car"
 msgstr "Nowy samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:320
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:443
 msgid "Edit Car"
 msgstr "Edytuj samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:321
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:444
 msgid "Update Car"
 msgstr "Zapisz samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:322
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:445
 msgid "View Car"
 msgstr "Podejrzyj samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:323
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:446
 msgid "Search Cars"
 msgstr "Szukaj samochodów"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:324
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:447
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:119
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:164
 msgid "Not found"
 msgstr "Nie znaleziono"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:325
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:448
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:120
 msgid "Not found in Trash"
 msgstr "Nie znaleziono w koszu"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:329
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:452
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:221
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:382
 msgid "Car"
 msgstr "Samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:330
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:453
 msgid "Cars managed by the My Car plugin"
 msgstr "Samochody zarządzane przez wtyczkę Mój Samochód"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:354
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:477
 msgid "cars"
 msgstr "samochody"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:383
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:506
 msgid "Import"
 msgstr "Import"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:389
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:512
 msgid "Brands & Models"
 msgstr "Marki i modele"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:390
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:513
 msgid "Import predefined brands and their models."
 msgstr "Zaimportuj predefiniowane marki i ich modele."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:399
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:634
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:788
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:522
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:757
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:955
 msgid "Body Types"
 msgstr "Typy nadwozia"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:400
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:523
 msgid "Import predefined body types."
 msgstr "Zaimportuj predefiniowane typy nadwozia."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:409
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:638
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:792
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:532
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:761
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:959
 msgid "Engine Types"
 msgstr "Typy silnika"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:410
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:533
 msgid "Import predefined engine types."
 msgstr "Zaimportuj predefiniowane typy silnika."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:419
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:586
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:837
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:542
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:709
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1004
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:156
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:383
 msgid "Service Types"
 msgstr "Typy serwisowe"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:420
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:543
 msgid "Import predefined service types."
 msgstr "Zaimportuj predefiniowane typy serwisowe."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:432
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:555
 msgid "Import predefined data"
 msgstr "Import danych predefiniowanych"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:476
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:599
 msgid "Unable to load car data."
 msgstr "Nie udało się wczytać danych samochodu."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:477
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:600
 msgid "Mileage saved."
 msgstr "Przebieg zapisany."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:478
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:601
 msgid "Mileage log:"
 msgstr "Historia przebiegu:"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:479
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:602
 msgid "No mileage entries yet."
 msgstr "Brak wpisów przebiegu."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:498
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:520
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:621
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:643
 msgid "Show"
 msgstr "Pokaż"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:539
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:662
 msgid "Close"
 msgstr "Zamknij"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:542
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:665
 msgid "Car Data"
 msgstr "Dane samochodu"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:556
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:566
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:584
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:823
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:835
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:679
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:689
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:707
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:990
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1002
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:226
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:384
 msgid "Date"
 msgstr "Data"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:557
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:570
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:585
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:824
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:836
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:680
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:693
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:708
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:991
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1003
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:231
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:385
 msgid "Mileage"
 msgstr "Przebieg"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:563
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:686
 msgid "Add Mileage Entry"
 msgstr "Dodaj wpis przebiegu"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:575
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:698
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:576
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:699
 msgid "Save Mileage"
 msgstr "Zapisz przebieg"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:591
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:714
 msgid "No service records yet."
 msgstr "Brak wpisów serwisowych."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:594
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:717
 msgid "Add Car Mileage"
 msgstr "Dodaj przebieg samochodu"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:609
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:663
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1013
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1116
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:732
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:786
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1180
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1283
 msgid "You are not allowed to do this."
 msgstr "Brak uprawnień."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:614
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:668
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1018
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:737
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:791
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1185
 msgid "Car not found."
 msgstr "Nie znaleziono samochodu."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:630
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:784
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1240
+#: etc/options.php:225
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:753
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:951
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1408
 msgid "Brand & Model"
 msgstr "Marka i model"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:677
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:800
 msgid "Unknown tab."
 msgstr "Nieznana zakładka."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:929
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1096
 msgid "Passport Fields"
 msgstr "Pola karty pojazdu"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:952
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1119
 msgid "Select which passport fields apply to this engine type. They will be shown in the car modal only for cars with this engine type."
 msgstr "Wybierz, które pola karty pojazdu dotyczą tego typu silnika. W oknie modalnym będą widoczne tylko dla samochodów z tym typem silnika."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1023
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1190
 msgid "Invalid date or mileage."
 msgstr "Nieprawidłowa data lub przebieg."
 
 #. translators: 1: number of brands, 2: number of models, 3: number of body types, 4: number of engine types, 5: number of service types.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1221
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1388
 #, php-format
 msgid "Import finished. Added %1$d brands, %2$d models, %3$d body types, %4$d engine types and %5$d service types."
 msgstr "Import zakończony. Dodano: marek: %1$d, modeli: %2$d, typów nadwozia: %3$d, typów silnika: %4$d, typów serwisowych: %5$d."
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1241
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1409
 msgctxt "Taxonomy General Name"
 msgid "Brands & Models"
 msgstr "Marki i modele"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1242
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1410
 msgctxt "Taxonomy Singular Name"
 msgid "Brand & Model"
 msgstr "Marka i model"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1247
+#: etc/options.php:235
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1415
 msgid "Body Type"
 msgstr "Typ nadwozia"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1248
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1416
 msgctxt "Taxonomy General Name"
 msgid "Body Types"
 msgstr "Typy nadwozia"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1249
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1417
 msgctxt "Taxonomy Singular Name"
 msgid "Body Type"
 msgstr "Typ nadwozia"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1254
+#: etc/options.php:245
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1422
 msgid "Engine Type"
 msgstr "Typ silnika"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1255
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1423
 msgctxt "Taxonomy General Name"
 msgid "Engine Types"
 msgstr "Typy silnika"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1256
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1424
 msgctxt "Taxonomy Singular Name"
 msgid "Engine Type"
 msgstr "Typ silnika"
 
 #. translators: %s: taxonomy label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1266
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1439
 #, php-format
 msgid "All %s"
 msgstr "Wszystkie: %s"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1268
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1441
 #, php-format
 msgid "Parent %s"
 msgstr "Nadrzędny: %s"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1270
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1443
 #, php-format
 msgid "Parent %s:"
 msgstr "Nadrzędny %s:"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1272
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1445
 #, php-format
 msgid "New %s Name"
 msgstr "Nazwa nowego elementu %s"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1274
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1447
 #, php-format
 msgid "Add New %s"
 msgstr "Utwórz %s"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1276
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1449
 #, php-format
 msgid "Edit %s"
 msgstr "Edytuj %s"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1278
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1451
 #, php-format
 msgid "Update %s"
 msgstr "Zapisz %s"
 
 #. translators: %s: taxonomy singular label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1280
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1453
 #, php-format
 msgid "View %s"
 msgstr "Podejrzyj %s"
 
 #. translators: %s: taxonomy label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1282
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1455
 #, php-format
 msgid "Separate %s with commas"
 msgstr "Oddziel %s przecinkami"
 
 #. translators: %s: taxonomy label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1284
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1457
 #, php-format
 msgid "Add or remove %s"
 msgstr "Dodaj lub usuń %s"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1285
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1458
 msgid "Choose from the most used"
 msgstr "Wybierz z najczęściej używanych"
 
 #. translators: %s: taxonomy label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1287
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1460
 #, php-format
 msgid "Popular %s"
 msgstr "Popularne %s"
 
 #. translators: %s: taxonomy label.
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1289
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1462
 #, php-format
 msgid "Search %s"
 msgstr "Szukaj %s"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1290
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:1463
 msgid "Not Found"
 msgstr "Nie znaleziono"
 
@@ -738,7 +741,7 @@ msgstr "Zaplanowane"
 
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-service-record.php:283
 #: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:205
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:395
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:419
 msgid "&mdash; Select &mdash;"
 msgstr "&mdash; Wybierz &mdash;"
 
@@ -746,19 +749,19 @@ msgstr "&mdash; Wybierz &mdash;"
 msgid "Service"
 msgstr "Serwis"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:340
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:364
 msgid "Select Image"
 msgstr "Wybierz obrazek"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:344
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:368
 msgid "Delete image"
 msgstr "Usuń obrazek"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:547
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:571
 msgid "Order"
 msgstr "Kolejność"
 
-#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:591
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype.php:615
 msgid "Selected Taxonomy dosn't exists."
 msgstr "Wybrana taksonomia nie istnieje."
 
@@ -773,3 +776,122 @@ msgstr "Priorytet menu administratora"
 #: etc/options.php:212
 msgid "Position of the Cars menu in the admin sidebar. Lower value = higher placement."
 msgstr "Pozycja menu Samochody w panelu administracyjnym. Mniejsza wartość = wyżej."
+
+#: etc/options.php:219
+msgid "Hide Taxonomy in Menu"
+msgstr "Ukryj taksonomię w menu"
+
+#: etc/options.php:226
+#: etc/options.php:236
+#: etc/options.php:246
+msgid "Hide from the admin menu; still available on the car edit screen."
+msgstr "Ukryj w menu administracyjnym; nadal dostępne na ekranie edycji samochodu."
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:316
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:872
+msgid "Drive"
+msgstr "Napęd"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:852
+msgid "Front-Wheel Drive (FWD)"
+msgstr "Napęd na przednie koła (FWD)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:853
+msgid "Rear-Wheel Drive (RWD)"
+msgstr "Napęd na tylne koła (RWD)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:854
+msgid "All-Wheel Drive (AWD)"
+msgstr "Napęd na wszystkie koła (AWD)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:338
+msgid "Dimensions and Weight"
+msgstr "Wymiary i masa"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:344
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:876
+msgid "Length (mm)"
+msgstr "Długość (mm)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:349
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:877
+msgid "Width (mm)"
+msgstr "Szerokość (mm)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:354
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:878
+msgid "Width with Mirrors (mm)"
+msgstr "Szerokość z lusterkami (mm)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:359
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:879
+msgid "Height (mm)"
+msgstr "Wysokość (mm)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:364
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:880
+msgid "Wheelbase (mm)"
+msgstr "Rozstaw osi (mm)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:369
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:881
+msgid "Weight Unladen (kg)"
+msgstr "Masa własna (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:374
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:882
+msgid "Gross Vehicle Weight (kg)"
+msgstr "Masa całkowita (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:379
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:883
+msgid "Max. Payload (kg)"
+msgstr "Maks. ładowność (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:384
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:884
+msgid "Cargo Volume (l)"
+msgstr "Pojemność bagażnika (l)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:389
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:885
+msgid "Cargo Volume Max (l)"
+msgstr "Maks. pojemność bagażnika (l)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:394
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:886
+msgid "Cargo Volume Frunk (l)"
+msgstr "Frunk (l)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:399
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:887
+msgid "Roof Load (kg)"
+msgstr "Obciążenie dachu (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:404
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:888
+msgid "Tow Hitch Possible"
+msgstr "Możliwość montażu haka"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:409
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:889
+msgid "Towing Weight Unbraked (kg)"
+msgstr "Masa przyczepy bez hamulca (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:414
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:890
+msgid "Towing Weight Braked (kg)"
+msgstr "Masa przyczepy z hamulcem (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:419
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:891
+msgid "Vertical Load Max (kg)"
+msgstr "Maks. nacisk pionowy (kg)"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:911
+msgid "Yes"
+msgstr "Tak"
+
+#: includes/iworks/my-car/posttypes/class-iworks-my-car-posttype-car.php:911
+msgid "No"
+msgstr "Nie"

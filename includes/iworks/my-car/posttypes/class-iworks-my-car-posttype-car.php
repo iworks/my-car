@@ -68,6 +68,37 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 	private array $engine_dependent_fields = array( 'engine_capacity', 'battery_capacity', 'electric_range' );
 
 	/**
+	 * Drive types: value => key of the full name in get_drive_type_options().
+	 *
+	 * @var string[]
+	 */
+	private array $drive_types = array( 'fwd', 'rwd', 'awd' );
+
+	/**
+	 * Dimension and weight field names.
+	 *
+	 * @var string[]
+	 */
+	private array $dimension_fields = array(
+		'length',
+		'width',
+		'width_with_mirrors',
+		'height',
+		'wheelbase',
+		'weight_unladen',
+		'gross_vehicle_weight',
+		'max_payload',
+		'cargo_volume',
+		'cargo_volume_max',
+		'cargo_volume_frunk',
+		'roof_load',
+		'tow_hitch_possible',
+		'towing_weight_unbraked',
+		'towing_weight_braked',
+		'vertical_load_max',
+	);
+
+	/**
 	 * Constructor
 	 *
 	 * @since 1.0.0
@@ -254,7 +285,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 		 * Settings
 		 */
 		$this->meta_boxes[ $this->post_type_name[ $this->post_type ] ] = array(
-			'car-data' => array(
+			'car-data'   => array(
 				'title'  => __( 'Vehicle Digital Passport', 'my-car' ),
 				'fields' => array(
 					array(
@@ -280,6 +311,12 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 						'label' => esc_html__( 'Engine Power (kW)', 'my-car' ),
 					),
 					array(
+						'name'    => 'drive',
+						'type'    => 'radio',
+						'label'   => esc_html__( 'Drive', 'my-car' ),
+						'options' => $this->get_drive_type_options(),
+					),
+					array(
 						'name'  => 'battery_capacity',
 						'type'  => 'number',
 						'label' => esc_html__( 'Battery Capacity (kWh)', 'my-car' ),
@@ -294,6 +331,92 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 						'type'       => 'text',
 						'label'      => esc_html__( 'License Plate Number', 'my-car' ),
 						'large-text' => false,
+					),
+				),
+			),
+			'dimensions' => array(
+				'title'  => __( 'Dimensions and Weight', 'my-car' ),
+				'folded' => true,
+				'fields' => array(
+					array(
+						'name'  => 'length',
+						'type'  => 'number',
+						'label' => esc_html__( 'Length (mm)', 'my-car' ),
+					),
+					array(
+						'name'  => 'width',
+						'type'  => 'number',
+						'label' => esc_html__( 'Width (mm)', 'my-car' ),
+					),
+					array(
+						'name'  => 'width_with_mirrors',
+						'type'  => 'number',
+						'label' => esc_html__( 'Width with Mirrors (mm)', 'my-car' ),
+					),
+					array(
+						'name'  => 'height',
+						'type'  => 'number',
+						'label' => esc_html__( 'Height (mm)', 'my-car' ),
+					),
+					array(
+						'name'  => 'wheelbase',
+						'type'  => 'number',
+						'label' => esc_html__( 'Wheelbase (mm)', 'my-car' ),
+					),
+					array(
+						'name'  => 'weight_unladen',
+						'type'  => 'number',
+						'label' => esc_html__( 'Weight Unladen (kg)', 'my-car' ),
+					),
+					array(
+						'name'  => 'gross_vehicle_weight',
+						'type'  => 'number',
+						'label' => esc_html__( 'Gross Vehicle Weight (kg)', 'my-car' ),
+					),
+					array(
+						'name'  => 'max_payload',
+						'type'  => 'number',
+						'label' => esc_html__( 'Max. Payload (kg)', 'my-car' ),
+					),
+					array(
+						'name'  => 'cargo_volume',
+						'type'  => 'number',
+						'label' => esc_html__( 'Cargo Volume (l)', 'my-car' ),
+					),
+					array(
+						'name'  => 'cargo_volume_max',
+						'type'  => 'number',
+						'label' => esc_html__( 'Cargo Volume Max (l)', 'my-car' ),
+					),
+					array(
+						'name'  => 'cargo_volume_frunk',
+						'type'  => 'number',
+						'label' => esc_html__( 'Cargo Volume Frunk (l)', 'my-car' ),
+					),
+					array(
+						'name'  => 'roof_load',
+						'type'  => 'number',
+						'label' => esc_html__( 'Roof Load (kg)', 'my-car' ),
+					),
+					array(
+						'name'  => 'tow_hitch_possible',
+						'type'  => 'checkbox',
+						'label' => esc_html__( 'Tow Hitch Possible', 'my-car' ),
+					),
+					array(
+						'name'  => 'towing_weight_unbraked',
+						'type'  => 'number',
+						'label' => esc_html__( 'Towing Weight Unbraked (kg)', 'my-car' ),
+					),
+					array(
+						'name'  => 'towing_weight_braked',
+						'type'  => 'number',
+						'label' => esc_html__( 'Towing Weight Braked (kg)', 'my-car' ),
+					),
+					array(
+						'name'  => 'vertical_load_max',
+						'type'  => 'number',
+						'label' => esc_html__( 'Vertical Load Max (kg)', 'my-car' ),
 					),
 				),
 			),
@@ -717,18 +840,55 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 	 *
 	 * @since 1.0.0
 	 *
+	/**
+	 * Get drive type options, translated.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array<string, string> Value => full translated name.
+	 */
+	private function get_drive_type_options(): array {
+		return array(
+			'fwd' => __( 'Front-Wheel Drive (FWD)', 'my-car' ),
+			'rwd' => __( 'Rear-Wheel Drive (RWD)', 'my-car' ),
+			'awd' => __( 'All-Wheel Drive (AWD)', 'my-car' ),
+		);
+	}
+
+	/**
+	 * Get passport rows for the car data table and modal.
+	 *
+	 * @since 1.0.0
+	 *
 	 * @param int $car_id Car post ID.
 	 * @return array[] Rows: label, value.
 	 */
 	private function get_passport_rows( $car_id ) {
 		$fields = array(
-			'vin'              => __( 'VIN', 'my-car' ),
-			'production_year'  => __( 'Production Year', 'my-car' ),
-			'engine_capacity'  => __( 'Engine Capacity (cm³)', 'my-car' ),
-			'engine_power'     => __( 'Engine Power (kW)', 'my-car' ),
-			'battery_capacity' => __( 'Battery Capacity (kWh)', 'my-car' ),
-			'electric_range'   => __( 'Electric Range (km)', 'my-car' ),
-			'license_plate'    => __( 'License Plate Number', 'my-car' ),
+			'vin'                    => __( 'VIN', 'my-car' ),
+			'production_year'        => __( 'Production Year', 'my-car' ),
+			'engine_capacity'        => __( 'Engine Capacity (cm³)', 'my-car' ),
+			'engine_power'           => __( 'Engine Power (kW)', 'my-car' ),
+			'drive'                  => __( 'Drive', 'my-car' ),
+			'battery_capacity'       => __( 'Battery Capacity (kWh)', 'my-car' ),
+			'electric_range'         => __( 'Electric Range (km)', 'my-car' ),
+			'license_plate'          => __( 'License Plate Number', 'my-car' ),
+			'length'                 => __( 'Length (mm)', 'my-car' ),
+			'width'                  => __( 'Width (mm)', 'my-car' ),
+			'width_with_mirrors'     => __( 'Width with Mirrors (mm)', 'my-car' ),
+			'height'                 => __( 'Height (mm)', 'my-car' ),
+			'wheelbase'              => __( 'Wheelbase (mm)', 'my-car' ),
+			'weight_unladen'         => __( 'Weight Unladen (kg)', 'my-car' ),
+			'gross_vehicle_weight'   => __( 'Gross Vehicle Weight (kg)', 'my-car' ),
+			'max_payload'            => __( 'Max. Payload (kg)', 'my-car' ),
+			'cargo_volume'           => __( 'Cargo Volume (l)', 'my-car' ),
+			'cargo_volume_max'       => __( 'Cargo Volume Max (l)', 'my-car' ),
+			'cargo_volume_frunk'     => __( 'Cargo Volume Frunk (l)', 'my-car' ),
+			'roof_load'              => __( 'Roof Load (kg)', 'my-car' ),
+			'tow_hitch_possible'     => __( 'Tow Hitch Possible', 'my-car' ),
+			'towing_weight_unbraked' => __( 'Towing Weight Unbraked (kg)', 'my-car' ),
+			'towing_weight_braked'   => __( 'Towing Weight Braked (kg)', 'my-car' ),
+			'vertical_load_max'      => __( 'Vertical Load Max (kg)', 'my-car' ),
 		);
 		/**
 		 * Filter the passport fields.
@@ -742,7 +902,14 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 			if ( in_array( $name, $this->engine_dependent_fields, true ) && ! in_array( $name, $engine_fields, true ) ) {
 				continue;
 			}
-			$value = get_post_meta( $car_id, $this->get_post_meta_name( $name, 'car-data' ), true );
+			$group = in_array( $name, $this->dimension_fields, true ) ? 'dimensions' : 'car-data';
+			$value = get_post_meta( $car_id, $this->get_post_meta_name( $name, $group ), true );
+			if ( 'drive' === $name && in_array( $value, $this->drive_types, true ) ) {
+				$value = $this->get_drive_type_options()[ $value ];
+			}
+			if ( 'tow_hitch_possible' === $name && '' !== $value ) {
+				$value = 'yes' === $value ? __( 'Yes', 'my-car' ) : __( 'No', 'my-car' );
+			}
 			if ( '' === $value || null === $value ) {
 				$value = '—';
 			}
@@ -1234,7 +1401,8 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 	 * @since 1.0.0
 	 */
 	public function action_init_register_taxonomy() {
-		$taxonomies = array(
+		$this->check_option_object();
+		$taxonomies       = array(
 			array(
 				'name'      => $this->taxonomy_brand,
 				'label'     => __( 'Brand & Model', 'my-car' ),
@@ -1256,6 +1424,11 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 				'singular'  => _x( 'Engine Type', 'Taxonomy Singular Name', 'my-car' ),
 				'rest_base' => 'car_engine_types',
 			),
+		);
+		$hide_option_name = array(
+			$this->taxonomy_brand       => 'hide_taxonomy_brand',
+			$this->taxonomy_body_type   => 'hide_taxonomy_body_type',
+			$this->taxonomy_engine_type => 'hide_taxonomy_engine_type',
 		);
 		foreach ( $taxonomies as $one ) {
 			$labels = array(
@@ -1296,7 +1469,7 @@ class iworks_my_car_posttype_car extends iworks_my_car_posttype {
 				'exclude_from_search' => false,
 				'rewrite'             => false,
 				'show_ui'             => true,
-				'show_in_menu'        => true,
+				'show_in_menu'        => empty( $hide_option_name[ $one['name'] ] ) || ! $this->options->get_option( $hide_option_name[ $one['name'] ] ),
 				'show_admin_column'   => true,
 				'show_in_nav_menus'   => true,
 				'show_tagcloud'       => false,

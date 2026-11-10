@@ -1,6 +1,6 @@
 {
     "name": "my-car",
-    "title": "My Car",
+    "title": "iWorks - My Car",
     "tagline": "Your car's digital passport — garage, mileage log and service records, all in WordPress.",
     "uri": "http://iworks.pl/iw_plugin/my-car/",
     "description": "Manage your vehicles in WordPress: a digital passport for every car (VIN, engine, battery), a mileage log and a full service history with per-field privacy control.",
@@ -40,6 +40,7 @@
         "build:github": "bun bundler/index.js build:github",
         "make-pot": "bun bundler/index.js make-pot",
         "update-libs": "bun bundler/index.js update-libs",
+        "check": "bun bundler/index.js check",
         "install-libs": "bun bundler/index.js install-libs",
         "test": "bun bundler/index.js test",
         "postinstall": "curl -sSfL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o wp-cli.phar || echo 'wp-cli.phar download failed - make-pot will retry it'"

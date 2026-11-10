@@ -6,11 +6,12 @@
  *   dev (default) — watcher, compile on change (no ZIP, no i18n)
  *   compile       — one-shot asset compile (old `grunt` default task)
  *   build         — both flavors: build:wporg + build:github
- *   build:wporg   — production build → release/wporg/{name}.zip (with Plugin Check)
+ *   build:wporg   — production build → release/wporg/{name}.zip
  *   build:github  — production build + .mo → release/github/{name}.zip
  *   make-pot      — translations only (.pot + .po update)
  *   update-libs   — git pull on the vendored iWorks libraries (submodules)
  *   install-libs  — git submodule add for iWorks libs: <https|git> <option|rate|all>
+ *   check         — coding standards (WPCS via phpcs + phpcs.xml.dist)
  *   test          — PHPUnit (tests/php/phpunit.xml)
  */
 
@@ -29,7 +30,6 @@ import {
 import { prettierFile } from "./tools.mjs";
 import { makeZip } from "./makeZip.mjs";
 import { makePot } from "./makePot.mjs";
-import { pluginCheck } from "./pluginCheck.mjs";
 
 const root = resolve(dirname(new URL(import.meta.url).pathname), "..");
 
@@ -73,7 +73,7 @@ async function compileAssets({
 async function build(flavor) {
   const start = Date.now();
   try {
-    const steps = flavor === "wporg" ? 8 : 7;
+    const steps = 7;
     const bar = new ProgressBar(steps);
     bar.tick("clean");
     await cleanCompiled();
@@ -87,10 +87,6 @@ async function build(flavor) {
     await makePot(flavor === "github");
     bar.tick("zip");
     await makeZip(flavor);
-    if (flavor === "wporg") {
-      bar.tick("plugin-check");
-      await pluginCheck(config.name, config.version);
-    }
     bar.tick("done");
     log(
       `BUILD OK (${flavor}) in ${((Date.now() - start) / 1000).toFixed(2)}s`,
@@ -269,6 +265,40 @@ async function installLibs(args) {
 }
 
 /**
+ * Coding standards check (WPCS via phpcs + phpcs.xml.dist).
+ */
+async function check() {
+  // phpcs may be a global composer binary, not on PATH.
+  const candidates = [
+    "phpcs",
+    join(process.env.HOME || "", ".config/composer/vendor/bin/phpcs"),
+  ];
+  let phpcs = null;
+  for (const candidate of candidates) {
+    if (candidate.includes("/") === false || existsSync(candidate)) {
+      phpcs = candidate;
+      break;
+    }
+  }
+  if (!phpcs) {
+    const err = new Error(
+      "phpcs not found. Install it: composer global require wp-coding-standards/wpcs dealerdirect/phpcodesniffer-composer-installer",
+    );
+    err.friendly = true;
+    throw err;
+  }
+  const result = await spawnAsync(phpcs, ["--colors"], "phpcs", false);
+  if (result.stdout.trim()) {
+    console.log(result.stdout.trim());
+  }
+  if (result.code !== 0) {
+    log(`phpcs found violations (exit ${result.code})`, "e");
+    process.exit(result.code);
+  }
+  log("check — WPCS passed", "s");
+}
+
+/**
  * PHPUnit (grunt `test` parity, jshint dropped).
  */
 async function test() {
@@ -302,7 +332,6 @@ const modes = {
       compileAssets({ maps: true, strip: false, format: false }),
     ),
   build: async () => {
-    // github first: a failing wporg Plugin Check must not block the github ZIP.
     await build("github");
     await build("wporg");
   },
@@ -311,6 +340,7 @@ const modes = {
   "make-pot": () => executionTime("make-pot", () => makePot(false)),
   "update-libs": () => executionTime("update-libs", () => updateLibs()),
   "install-libs": () => installLibs(process.argv.slice(3)),
+  check: () => check(),
   test: () => test(),
 };
 

@@ -51,7 +51,7 @@ class iworks_my_car extends iworks_my_car_base {
 		/**
 		 * post types
 		 */
-		$filename = $this->includes_directory . '/class-iworks-my-car-posttypes.php';
+        $filename = $this->includes_directory . '/class-iworks-my-car-posttypes.php';
 		if ( is_file( $filename ) ) {
 			include_once $filename;
 			new iworks_my_car_posttypes();

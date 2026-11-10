@@ -2,6 +2,13 @@
 Added
 - "Misc" settings section with admin menu priority (default 60) that
   controls the position of the Cars menu in the admin sidebar
+- "Hide Taxonomy in Menu" options to hide the Brand & Model, Body Type
+  and Engine Type taxonomies from the admin menu (they remain available
+  on the car edit screen); shown by default
+- "Dimensions and Weight" metabox (folded by default) with length, width,
+  height, wheelbase, weights, cargo volumes, towing data and tow hitch
+  option, shown on the frontend passport too
+- Drive field (FWD / RWD / AWD) in the Vehicle Digital Passport
 
 ## 0.0.1 - 2026.11.05
 Added
